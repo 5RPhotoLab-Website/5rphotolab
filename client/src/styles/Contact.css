@@ -1,0 +1,12 @@
+.contact-page {
+    width: 76.875rem;
+    height: 47.5rem;
+    margin-top: -1.875rem;
+}
+
+@media (max-height: 900px) {
+    .contact-page {
+        margin-top: -2.5rem;
+        height: 44.5rem;
+    }
+}
