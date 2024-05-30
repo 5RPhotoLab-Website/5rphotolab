@@ -6,3 +6,8 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /client/index.html [L]
 </IfModule>
+
+<Directory "/Users/zhenyasolomyana/5rphotolab/client">
+    AllowOverride All
+    Require all granted
+</Directory>
