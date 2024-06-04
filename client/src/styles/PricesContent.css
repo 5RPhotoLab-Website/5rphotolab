@@ -1,0 +1,93 @@
+@import url('variables.css');
+
+.prices-list {
+    margin-top: 20px;
+}
+
+.prices-list-top {
+    gap: 42px;
+    padding: 30px;
+    display: flex;
+    text-align: left;
+}
+
+.prices-top-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    flex: 1;
+}
+
+.prices-top-item-title {
+    color: #095290;
+    font: 800 25px Futura, sans-serif;
+}
+
+.prices-top-item-row,
+.prices-top-item-row-2,
+.prices-top-item-row-3,
+.prices-top-item-row-4,
+.prices-top-item-row-5,
+.prices-top-item-row-6 {
+    display: flex;
+    gap: 9px;
+}
+
+.prices-price {
+    color: #095290;
+    font-family: Futura, sans-serif;
+    font-weight: 800;
+    width: 73px;
+}
+
+.prices-description {
+    color: #f5f5f5;
+    font-family: Futura, sans-serif;
+    font-weight: 500;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+.prices-list-bottom {
+    text-align: left;
+    gap: 30px;
+    padding: 30px;
+    display: flex;
+    font: 20px Futura, sans-serif;
+}
+
+.prices-more-title {
+    color: #095290;
+    font: 800 25px Futura, sans-serif;
+}
+
+.prices-more-item-row,
+.prices-more-item-row-2,
+.prices-more-item-row-3,
+.prices-more-item-row-4 {
+    display: flex;
+    gap: 9px;
+}
+
+.rush-list {
+    flex-grow: 1;
+}
+
+.rush-title {
+    color: #8A2BE2;
+    font: 800 25px Futura, sans-serif;
+}
+
+.rush-item-row,
+.rush-item-row-2,
+.rush-item-row-3 {
+    display: flex;
+    gap: 9px;
+}
+
+.rush-price {
+    color: #8A2BE2;
+    font-family: Futura, sans-serif;
+    font-weight: 800;
+    width: 73px
+}
