@@ -1,8 +1,0 @@
-@import url('./styles/variables.css');
-
-#root {
-  text-align: center;
-  background-color: var(--main-background-color);
-  margin-left: 36vh;
-}
-
