@@ -147,3 +147,7 @@
 .location-info img {
     vertical-align: middle;
 }
+
+.highlightHP {
+    font-family: var(--font-futura-maxi);
+}

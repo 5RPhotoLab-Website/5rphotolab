@@ -15,7 +15,8 @@
 
 .top-item-title {
     color: #01b2fe;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .top-item-row, .top-item-row-2 {
@@ -25,8 +26,7 @@
 
 .price {
     color: #01b2fe;
-    font-family: Futura, sans-serif;
-    font-weight: 800;
+    font-family: var(--font-futura-maxi);
     width: 72px;
 }
 
@@ -53,7 +53,8 @@
 
 .half-frame-title {
     color: #01b2fe;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .half-frame-item-row,
@@ -71,7 +72,8 @@
 
 .more-title {
     color: #01b2fe;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .more-description {
@@ -79,6 +81,6 @@
 }
 
 .highlight {
-    font-weight: 800;
+    font-family: var(--font-futura-maxi);
     color: rgba(1, 178, 254, 1);
 }

@@ -145,8 +145,7 @@
   margin-top: -1.25rem;
   width: 14.813rem;
   flex-direction: column;
-  font-family: var(--font-futura);
-  font-weight: bold;
+  font-family: var(--font-futura-maxi);
   display: flex;
 }
 
@@ -198,8 +197,7 @@ a {
   border-radius: 50%;
   width: 5.25rem;
   height: 4rem;
-  font-family: var(--font-futura);
-  font-weight: bold;
+  font-family: var(--font-futura-maxi);
   cursor: pointer;
 }
 

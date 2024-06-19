@@ -18,13 +18,21 @@ const HomePage = () => {
                     <section className="content-wrapper">
                         <article className="left-column">
                             <div className="text-box">
-                                <p>
+                                {/* <p>
                                     We are a photo lab <strong>NEAR YOU</strong> that{" "}
                                     <strong>develops</strong>, <strong>scans</strong>, and{" "}
                                     <strong>prints</strong> <strong>35mm</strong>,{" "}
                                     <strong>including disposable cameras</strong>,{" "}
                                     <strong>120</strong>, <strong>110</strong>, and{" "}
                                     <strong>APS/Advantix film</strong>.
+                                </p> */}
+                                <p>
+                                    We are a photo lab <span className="highlightHP">NEAR YOU</span> that{" "}
+                                    <span className="highlightHP">develops</span>, <span className="highlightHP">scans</span>, and{" "}
+                                    <span className="highlightHP">prints</span> <span className="highlightHP">35mm</span>,{" "}
+                                    <span className="highlightHP">including disposable cameras</span>,{" "}
+                                    <span className="highlightHP">120</span>, <span className="highlightHP">110</span>, and{" "}
+                                    <span className="highlightHP">APS/Advantix film</span>.
                                 </p>
                                 <p>
                                     We also make prints from your digital files—whether it's from
@@ -42,8 +50,8 @@ const HomePage = () => {
                                     We are conveniently located in Greenwich Village, near New York
                                     University, New School, Parsons, Cooper Union, Astor Place, and
                                     the East Village. <br />
-                                    We are also moments away from Astor Place <img class="sixTrainIcon" src={sixTrainIcon} alt="" /> subway station, and 8
-                                    St-NYU <img class="RandWTrainIcons" src={RandWTrainIcons} alt="" /> station.
+                                    We are also moments away from Astor Place <img className="sixTrainIcon" src={sixTrainIcon} alt="" /> subway station, and 8
+                                    St-NYU <img className="RandWTrainIcons" src={RandWTrainIcons} alt="" /> station.
                                 </p>
                             </div>
                         </article>
