@@ -20,7 +20,8 @@
 
 .prices-top-item-title {
     color: #095290;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .prices-top-item-row,
@@ -35,30 +36,36 @@
 
 .prices-price {
     color: #095290;
-    font-family: Futura, sans-serif;
-    font-weight: 800;
+    font-family: var(--font-futura-maxi);
     width: 73px;
 }
 
 .prices-description {
     color: #f5f5f5;
-    font-family: Futura, sans-serif;
+    font-family: var(--font-futura);
     font-weight: 500;
     flex-grow: 1;
     flex-basis: auto;
 }
 
 .prices-list-bottom {
-    text-align: left;
-    gap: 30px;
+    gap: 65px;
     padding: 30px;
     display: flex;
+    text-align: left;
     font: 20px Futura, sans-serif;
+}
+
+@media (max-height: 900px) {
+    .prices-list-bottom {
+        gap: 100px;
+    }
 }
 
 .prices-more-title {
     color: #095290;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .prices-more-item-row,
@@ -75,7 +82,8 @@
 
 .rush-title {
     color: #8A2BE2;
-    font: 800 25px Futura, sans-serif;
+    font-family: var(--font-futura-maxi);
+    font-size: 25px;
 }
 
 .rush-item-row,
@@ -87,7 +95,7 @@
 
 .rush-price {
     color: #8A2BE2;
-    font-family: Futura, sans-serif;
-    font-weight: 800;
+    font-family: var(--font-futura-maxi);
+    /* font-weight: 800; */
     width: 73px
 }

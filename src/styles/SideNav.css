@@ -36,8 +36,6 @@
   border: 5px solid black;
   border-radius: 20px;
   background-color: var(--color-white);
-  /* padding: 1.25rem 1.875rem 1.25rem 1.875rem; */
-  /* width: 6.25rem; */
   letter-spacing: 0.52px;
 }
 
@@ -147,8 +145,7 @@
   margin-top: -1.25rem;
   width: 14.813rem;
   flex-direction: column;
-  font-family: var(--font-futura);
-  font-weight: bold;
+  font-family: var(--font-futura-maxi);
   display: flex;
 }
 
@@ -200,8 +197,7 @@ a {
   border-radius: 50%;
   width: 5.25rem;
   height: 4rem;
-  font-family: var(--font-futura);
-  font-weight: bold;
+  font-family: var(--font-futura-maxi);
   cursor: pointer;
 }
 

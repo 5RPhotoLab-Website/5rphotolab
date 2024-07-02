@@ -34,12 +34,6 @@
     justify-content: center;
 }
 
-/* .pricesBtn span,
-.othersBtn span,
-.bundlesBtn span {
-    margin-bottom: 12px;
-} */
-
 .pricesBtn img,
 .othersBtn img,
 .bundlesBtn img {
@@ -64,7 +58,7 @@
 }
 
 .bundlesTitle {
-    font-family: var(--font-futura);
+    font-family: var(--font-futura-maxi);
     margin-top: 230px;
 }
 

@@ -87,7 +87,6 @@
 
     margin-top: -4px;
     margin-left: 6%;
-    /* width: 78.4rem; */
     width: 70vw;
     height: 38.188rem;
 }
@@ -131,8 +130,6 @@
 
 .right-column {
     flex: 2;
-    /* margin-left: 1.68rem; */
-    /* margin-left: 1.50rem; */
     display: flex;
     flex-direction: column;
 
@@ -149,4 +146,8 @@
 
 .location-info img {
     vertical-align: middle;
+}
+
+.highlightHP {
+    font-family: var(--font-futura-maxi);
 }
