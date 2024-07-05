@@ -18,14 +18,6 @@ const HomePage = () => {
                     <section className="content-wrapper">
                         <article className="left-column">
                             <div className="text-box">
-                                {/* <p>
-                                    We are a photo lab <strong>NEAR YOU</strong> that{" "}
-                                    <strong>develops</strong>, <strong>scans</strong>, and{" "}
-                                    <strong>prints</strong> <strong>35mm</strong>,{" "}
-                                    <strong>including disposable cameras</strong>,{" "}
-                                    <strong>120</strong>, <strong>110</strong>, and{" "}
-                                    <strong>APS/Advantix film</strong>.
-                                </p> */}
                                 <p>
                                     We are a photo lab <span className="highlightHP">NEAR YOU</span> that{" "}
                                     <span className="highlightHP">develops</span>, <span className="highlightHP">scans</span>, and{" "}

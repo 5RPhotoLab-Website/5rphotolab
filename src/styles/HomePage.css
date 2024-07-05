@@ -6,6 +6,7 @@
     }
 }
 
+
 .top-bar {
     position: relative;
     height: 10vh;
@@ -90,6 +91,12 @@
     width: 70vw;
     height: 38.188rem;
 }
+
+@media (max-width: 767px) {
+    .top-bar, .bottom-bar {
+      width: 290vw;
+    }
+  } 
 
 @media (max-height: 900px) {
     .bottom-bar {

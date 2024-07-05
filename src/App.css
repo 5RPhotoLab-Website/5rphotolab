@@ -6,3 +6,9 @@
   margin-left: 36vh;
 }
 
+@media (max-width: 767px) {
+  body {
+    transform: scale(0.6);
+    transform-origin: 0 0;
+  }
+}

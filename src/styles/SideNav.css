@@ -7,6 +7,13 @@
   margin-top: 0;
 }
 
+@media (max-width: 767px) {
+  .sideNavTitle {
+    font: 400 43vw var(--font-bubblicious);
+    width: 300vw;
+  }
+} 
+
 .sidenav {
   width: 21.875rem;
   position: fixed;
