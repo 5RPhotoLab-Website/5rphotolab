@@ -6,7 +6,6 @@
     }
 }
 
-
 .top-bar {
     position: relative;
     height: 10vh;
@@ -95,6 +94,7 @@
 @media (max-width: 767px) {
     .top-bar, .bottom-bar {
       width: 290vw;
+      margin-left: 30%;
     }
   } 
 
