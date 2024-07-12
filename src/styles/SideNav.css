@@ -26,7 +26,7 @@
   .sideNavTitle {
     font: 400 43vw var(--font-bubblicious);
     width: 300vw;
-    /* margin-left: 25%; */
+    margin-left: 15%;
   }
   .sidenav {
     padding-left: 0;
@@ -56,6 +56,12 @@
     padding: 0.8rem 1.1rem 0.8rem 1.1rem;
   }
 }
+
+@media (max-width: 767px) {
+  .filmy-title {
+    padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+  }
+} 
 
 .container-btn {
   filter: drop-shadow(3px 6px 2px rgba(50, 50, 0, .5));
