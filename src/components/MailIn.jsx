@@ -1,3 +1,5 @@
+import '../styles/MailIn.css'
+
 const MailIn = () => {
     return (
         <>

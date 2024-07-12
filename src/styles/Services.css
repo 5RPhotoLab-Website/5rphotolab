@@ -18,7 +18,6 @@
     }
 }
 
-
 .pricesBtn,
 .othersBtn,
 .bundlesBtn {
@@ -84,6 +83,12 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 767px) {
+    .top, .bottom {
+      width: 290vw;
+    }
+  } 
 
 @media (max-height: 900px) {
     .bottom {

@@ -10,3 +10,9 @@
         height: 44.5rem;
     }
 }
+
+@media (max-width: 767px) {
+    .contact-page {
+      margin-left: 5rem;
+    }
+  } 
