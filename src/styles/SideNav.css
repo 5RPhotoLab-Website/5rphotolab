@@ -26,7 +26,7 @@
   .sideNavTitle {
     font: 400 43vw var(--font-bubblicious);
     width: 300vw;
-    margin-left: 25%;
+    /* margin-left: 25%; */
   }
   .sidenav {
     padding-left: 0;

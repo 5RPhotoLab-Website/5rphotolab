@@ -93,13 +93,8 @@
 
 /* for mobile devices */
 @media (max-width: 767px) { 
-    .top-bar {
+    .top-bar, .bottom-bar {
         width: 290vw;
-        margin-left: 30%;
-    }
-    .bottom-bar {
-        width: 290vw;
-        margin-left: 100%;
     }
   } 
 
