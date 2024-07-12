@@ -93,9 +93,13 @@
 
 /* for mobile devices */
 @media (max-width: 767px) { 
-    .top-bar, .bottom-bar {
+    .top-bar {
         width: 290vw;
         margin-left: 30%;
+    }
+    .bottom-bar {
+        width: 290vw;
+        margin-left: 60%;
     }
   } 
 
