@@ -211,6 +211,12 @@ a {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  .buzzInBtn {
+    color: black;
+  }
+}
+
 .phoneNumber {
   margin-bottom: 30px;
 }

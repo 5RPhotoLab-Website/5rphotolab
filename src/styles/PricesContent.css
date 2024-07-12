@@ -32,6 +32,8 @@
 .prices-top-item-row-6 {
     display: flex;
     gap: 9px;
+    align-items: baseline;
+
 }
 
 .prices-price {
@@ -74,6 +76,7 @@
 .prices-more-item-row-4 {
     display: flex;
     gap: 9px;
+    align-items: baseline;
 }
 
 .rush-list {
@@ -91,11 +94,11 @@
 .rush-item-row-3 {
     display: flex;
     gap: 9px;
+    align-items: baseline;
 }
 
 .rush-price {
     color: #8A2BE2;
     font-family: var(--font-futura-maxi);
-    /* font-weight: 800; */
     width: 73px
 }
