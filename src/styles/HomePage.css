@@ -91,10 +91,11 @@
     height: 38.188rem;
 }
 
-@media (max-width: 767px) {
+/* for mobile devices */
+@media (max-width: 767px) { 
     .top-bar, .bottom-bar {
-      width: 290vw;
-      margin-left: 30%;
+        width: 290vw;
+        margin-left: 30%;
     }
   } 
 

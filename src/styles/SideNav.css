@@ -7,14 +7,6 @@
   margin-top: 0;
 }
 
-@media (max-width: 767px) {
-  .sideNavTitle {
-    font: 400 43vw var(--font-bubblicious);
-    width: 300vw;
-    margin-left: 25%;
-  }
-} 
-
 .sidenav {
   width: 21.875rem;
   position: fixed;
@@ -30,6 +22,17 @@
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .sideNavTitle {
+    font: 400 43vw var(--font-bubblicious);
+    width: 300vw;
+    margin-left: 25%;
+  }
+  .sidenav {
+    padding-left: 0;
+  }
+} 
+
 .filmy-image {
   width: 15rem;
   height: 15rem;
@@ -40,7 +43,6 @@
   font-size: 1.6rem;
   width: 7rem;
   padding: 0.8rem 1.1rem 0.8rem 1.1rem;
-
   border: 5px solid black;
   border-radius: 20px;
   background-color: var(--color-white);
