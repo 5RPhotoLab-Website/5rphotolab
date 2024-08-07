@@ -33,13 +33,15 @@
     display: flex;
     gap: 9px;
     align-items: baseline;
-
+    flex-wrap: nowrap;
 }
 
 .prices-price {
     color: #095290;
     font-family: var(--font-futura-maxi);
-    width: 73px;
+    /* width: 73px; */
+    width: auto;
+    flex-shrink: 0;
 }
 
 .prices-description {
@@ -47,7 +49,7 @@
     font-family: var(--font-futura);
     font-weight: 500;
     flex-grow: 1;
-    flex-basis: auto;
+    flex-basis: 70%;
 }
 
 .prices-list-bottom {

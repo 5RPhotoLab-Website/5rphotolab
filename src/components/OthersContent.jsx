@@ -18,8 +18,8 @@ const OthersContent = () => {
   ];
 
   const halfFrameData = [
-    { price: "$23.99", description: "35mm Color Dev/Scan, individual photos" },
-    { price: "$19.99", description: "35mm Color Dev/Scan, diptych" },
+    { price: "$27.99", description: "35mm Color Dev/Scan, Individual Photos" },
+    { price: "$23.99", description: "35mm Color Dev/Scan, Diptych" },
     { price: "$27.99", description: "35mm B&W Dev/Scan" }
   ];
 
@@ -42,7 +42,7 @@ const OthersContent = () => {
         </div>
         <div className="others-list-bottom">
           <HalfFrameList
-            title="Half-frame"
+            title="Half-Frame Standard Two-Day"
             data={halfFrameData}
           />
           <div className="more-list">
