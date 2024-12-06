@@ -1,6 +1,13 @@
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     h1 {
       width: 290vw;
       align-items: center;
+      margin-left: 50vh;
     }
-  } 
+  }  */
+
+.mailInTitle {
+  width: 290vw;
+  align-items: center;
+  margin-left: 50vw;
+}

@@ -3,7 +3,7 @@ import '../styles/MailIn.css'
 const MailIn = () => {
     return (
         <>
-            <h1 className="bundlesTitle">CHECK BACK SOON!</h1>
+            <h1 className="mailInTitle">CHECK BACK SOON!</h1>
         </>
     )
 }

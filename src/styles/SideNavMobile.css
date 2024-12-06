@@ -1,0 +1,84 @@
+@import url(variables.css);
+
+.sideNavTitleMobile {
+    text-align: center;
+    font: 400 13vw var(--font-bubblicious);
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8 {
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: var(--font-bubblicious);
+    text-align: center;
+    font-size: 6vw;
+}
+
+.box1 {
+    width: 10.833vw;
+    height: 2vh;
+    margin-left: 60vw;
+}
+
+.box2 {
+    width: 18.333vw;
+    height: 3.444vh;
+    margin-left: 40vw;
+}
+
+.box3 {
+    width: 40vw;
+    height: 7vh;
+}
+
+.box4,
+.box6 {
+    width: 18.333vw;
+    height: 3.444vh;
+}
+
+.box5 {
+    width: 30vw;
+    height: 7vh;
+    margin-top: 5vh;
+}
+
+.box4 {
+    margin-top: 5vh;
+}
+
+/* Container holds both the boxes and the image */
+.containerMobile {
+    display: flex;
+    /* Align child elements (left-side and image) in a row */
+    /* align-items: flex-start; */
+    /* Align items to the top */
+    /* justify-content: flex-start; */
+    /* Align the child items to the left */
+    /* gap: 20px; */
+}
+
+
+.leftSideMobile {
+    display: flex;
+    flex-direction: column;
+    /* Stack the boxes vertically */
+    gap: 10px;               
+}
+
+
+.filmyColorOnly {
+    width: 272px; 
+    height: auto; 
+  }
