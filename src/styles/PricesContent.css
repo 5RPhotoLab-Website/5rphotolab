@@ -39,8 +39,8 @@
 .prices-price {
     color: #095290;
     font-family: var(--font-futura-maxi);
-    /* width: 73px; */
-    width: auto;
+    width: 73px;
+    /* width: auto; */
     flex-shrink: 0;
 }
 
