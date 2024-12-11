@@ -93,7 +93,8 @@
 @media (max-height: 900px) {
     .bottom {
         margin-left: 7%;
-        height: 37.9rem;
+        /* height: 37.9rem; */
+        height: auto;
     }
 }
 

@@ -1,6 +1,9 @@
-@media (max-width: 767px) {
-    h1 {
-      width: 290vw;
-      align-items: center;
-    }
-  } 
+@import url(variables.css);
+
+.top, .bottom {
+  background-color: var(--color-blue);
+}
+
+.bottom p, h2 {
+  font-family: var(--font-futura);
+}
