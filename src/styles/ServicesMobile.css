@@ -1,0 +1,28 @@
+@import url(variables.css);
+
+.pricesBtnMobile,
+.othersBtn,
+.bundlesBtn {
+    border: none;
+    height: 10vh;
+    font-family: var(--font-futura);
+    font-stretch: condensed;
+    font-weight: bold;
+    font-size: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .pricesBtn img,
+.othersBtn img,
+.bundlesBtn img {
+    vertical-align: middle;
+} */
+
+.pricesBtnMobile {
+    border-radius: 45px 0 0 0;
+    background-color: var(--color-blue);
+    width: 24.8rem;
+}
