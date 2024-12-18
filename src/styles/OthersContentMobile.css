@@ -1,0 +1,23 @@
+@import url('variables.css');
+
+.others {
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.others-title {
+    color: var(--color-blue);
+    font-family: var(--font-futura-maxi);
+    font-size: 17px;
+    margin-bottom: 0.7vh;
+}
+
+.others-row,
+.others-row-2,
+.others-row-3,
+.others-row-4{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+}
