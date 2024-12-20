@@ -7,9 +7,11 @@ const MailInMobile = () => {
             <div className="main-container-mailin">
                 <div className="top-mailin">
                     <div className="triangle"></div>
+                    <img src={mailStamp} alt="Mail Stamp" />
+
                 </div>
                 <div className="bottom-mailin">
-                    <img src={mailStamp} alt="Mail Stamp" />
+                    {/* <img src={mailStamp} alt="Mail Stamp" /> */}
                     <h2>We offer mail-in development, scan, and print services!</h2>
                     <p><b>Not in New York City?</b> We can still develop your film—including all those old disposable cameras you’ve got lying around the house!</p> <br />
 
