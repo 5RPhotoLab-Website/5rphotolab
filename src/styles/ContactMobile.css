@@ -110,8 +110,44 @@
 
 .socialMediaMobile-contact {
     position: absolute;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 5px; 
+    top: 85%; 
+    margin-left: 25vw;
+}
+
+.socialMediaMobile-contact div {
     display: flex;
-    justify-content: space-between;
-    padding: 0 20vw;
-    top: 90%;
+    align-items: center; 
+}
+
+.socialMediaMobile-contact button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instagramMobile,
+.tiktokMobile {
+    border-radius: 50%;
+    background-color: var(--main-background-color);
+    width: 16vw;
+    height: 16vw;
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 3px 4px 0px rgba(0, 0, 0, 1);
+}
+
+#inIconMobile-contact,
+#tikIconMobile-contact {
+    /* padding-top: 0.188rem; */
+    width: 1.938rem;
+    height: 1.938rem;
+    margin-right: 2vw;
+}
+
+.instagramMobile,
+.tiktokMobile {
+    margin-left: 20vw;
 }

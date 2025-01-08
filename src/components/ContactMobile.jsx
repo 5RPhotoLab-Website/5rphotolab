@@ -34,17 +34,20 @@ const ContactMobile = () => {
                         <a href="mailto:info@5rphotolab.com">info@5rphotolab.com</a>
                     </div>
                 </div>
-                {/* <div className="socialMediaMobile-contact">
-                    <a href="https://www.instagram.com/5rphotolab/?hl=en" target="_blank">
-                        <button className="instagramMobile"><img id="inIconMobile" src={instagramIcon} alt="Instagram Icon" /></button>
-                    </a>
-                    <a href="https://www.tiktok.com/@5rphotolab" target="_blank">
-                        <button className="tiktokMobile"><img id="tikIconMobile" src={tikTokIcon} alt="TikTok Icon" /></button>
-                    </a>
-                </div> */}
+                <div className="socialMediaMobile-contact">
+                    <div>
+                        <a href="https://www.instagram.com/5rphotolab/?hl=en" target="_blank">
+                            <button className="instagramMobile"><img id="inIconMobile-contact" src={instagramIcon} alt="Instagram Icon" /></button>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.tiktok.com/@5rphotolab" target="_blank">
+                            <button className="tiktokMobile"><img id="tikIconMobile-contact" src={tikTokIcon} alt="TikTok Icon" /></button>
+                        </a>
+                    </div>
+                </div>
 
             </div>
-
         </>
     )
 }

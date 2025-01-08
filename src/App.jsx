@@ -5,10 +5,10 @@ import ResponsiveNav from './components/ResponsiveNav'
 function App() {
 
   return (
-    <>
-    <ResponsiveNav />
+    <div className="mainApp">
+      <ResponsiveNav />
       {/* <SideNav /> */}
-    </>
+    </div>
   )
 }
 
