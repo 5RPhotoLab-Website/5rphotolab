@@ -1,0 +1,324 @@
+.main-container-mobile {
+    padding: 0;
+    margin: 0;
+}
+
+.sideNavTitleMobile {
+    text-align: center;
+    font: 400 13vw var(--font-bubblicious);
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9 {
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: var(--font-bubblicious);
+    text-align: center;
+    font-size: 6vw;
+}
+
+.box1,
+.box7 {
+    width: 10.833vw;
+    height: 2vh;
+}
+
+.box1 {
+    margin-left: 60vw;
+}
+
+.box6 {
+    margin-left: 10vw;
+}
+
+.box7 {
+    margin-left: 20vw;
+}
+
+.box8 {
+    margin-left: 35vw;
+}
+
+.box2 {
+    width: 18.333vw;
+    height: 3.444vh;
+    margin-left: 40vw;
+}
+
+.box3 {
+    width: 40vw;
+    height: 7vh;
+}
+
+.box4,
+.box6,
+.box8 {
+    width: 18.333vw;
+    height: 3.444vh;
+}
+
+.box5 {
+    width: 30vw;
+    height: 7vh;
+    margin-top: 5vh;
+}
+
+.box4,
+.box6,
+.box7,
+.box8 {
+    margin-top: 5vh;
+}
+
+.box2,
+.box3 {
+    margin-top: 3vh;
+}
+
+.box9 {
+    margin-top: 3vh;
+    margin-left: 38vw;
+    width: 52vw;
+    height: 7vh;
+}
+
+/* Container holds both the boxes and the image */
+.containerMobile {
+    display: flex;
+    position: relative;
+    /* Allow absolute positioning inside */
+    align-items: center;
+    /* Align items vertically */
+}
+
+.leftSideMobile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.filmyColorOnly {
+    /* width: 272px;  */
+    /* width: 75.556vw; */
+    width: 16rem;
+    height: auto;
+}
+
+/* Top-Bar */
+
+.top-bar-mobile {
+    margin-top: 10vh;
+    position: relative;
+    height: 9.597vh;
+    /* width: 90vw; */
+    border-radius: 50px 50px 0 0;
+    border: var(--main-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#searchIconMobile {
+    width: 9vw;
+    height: 4vh;
+}
+
+.search-title-mobile {
+    font-size: 32px;
+    font-family: var(--font-futura);
+}
+
+/* Bottom-Bar */
+
+.bottom-bar-mobile {
+    position: relative;
+    border: var(--main-border);
+    background-color: var(--color-purple);
+    margin-top: -4px;
+    /* height: 84.123vh; */
+    /* height: auto; */
+    /* width: 90vw; */
+}
+
+.header-box-mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2vh;
+    margin-left: 0;
+}
+
+.washSqSubway p {
+    color: white;
+    font: 400 23px var(--font-futura-maxi);
+    margin-bottom: 0;
+}
+
+#videoMapIconMobile {
+    margin-top: 3vh;
+}
+
+.video-map-note-mobile {
+    position: absolute;
+    top: 1.3vh;
+    left: 79%;
+    font-family: var(--font-futura);
+    font-size: 11px;
+    color: white;
+}
+
+.wrapTextAndLocation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-box-mobile {
+    text-align: left;
+    border-radius: 5.556vw;
+    border: var(--main-border);
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    padding: 0 3.111vw;
+    font: 400 18px var(--font-futura);
+    width: 76vw;
+}
+
+.location-info-mobile {
+    margin-left: 2vw;
+    width: 86vw;
+    text-align: left;
+    color: var(--color-white);
+    font: 400 20px var(--font-futura);
+}
+
+.location-info-mobile img {
+    vertical-align: middle;
+}
+
+/* Container to hide part of the image */
+.image-container {
+    margin-top: 5vh;
+    position: relative;
+    width: 100vw;
+    height: 35vh;
+    overflow: hidden;
+}
+
+/* Rotated image */
+.filmyColorOnlyHalfHidden {
+    position: absolute;
+    top: 15%;
+    left: 63%;
+    transform: rotate(-45deg);
+}
+
+/* Social Info */
+
+.rectangleContainerMobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 96vw;
+    height: 50vh;
+    margin-bottom: 5vh;
+}
+
+.eyesMobile {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    transform: translateY(0.5rem);
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.circleMobile {
+    background-color: var(--main-background-color);
+    border: var(--main-border);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.rectContainerBodyMobile {
+    align-self: center;
+    border: var(--main-border);
+    height: 80vh;
+    margin-bottom: -1.25rem;
+    margin-top: -1.25rem;
+    width: 70vw;
+    font-family: var(--font-futura-maxi);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addressMobile {
+    text-align: center;
+}
+
+.hoursMobile,
+.phoneNumberMobile {
+    margin-top: 10vh;
+}
+
+.buzzInContainerMobile {
+    position: absolute;
+    top: 32%;
+    right: 5%;
+    transform: rotate(15deg);
+}
+
+.feetMobile {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.socialMediaMobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20vw;
+}
+
+.instagramMobile,
+.tiktokMobile {
+    border-radius: 50%;
+    background-color: var(--main-background-color);
+    width: 16vw;
+    height: 16vw;
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 3px 4px 0px rgba(0, 0, 0, 1);
+}
+
+#inIconMobile,
+#tikIconMobile {
+    padding-top: 0.188rem;
+    width: 1.938rem;
+    height: 1.938rem;
+}
+
+.instagramMobile,
+.tiktokMobile {
+    /* margin-top: 5vh; */
+    margin-left: 20vw;
+}

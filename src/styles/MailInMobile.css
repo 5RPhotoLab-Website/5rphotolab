@@ -1,0 +1,57 @@
+@import url('variables.css');
+
+.top-mailin {
+    margin-top: 5vh;
+    position: relative;
+    height: 27vh;
+    border-radius: 50px 50px 0 0;
+    border-top: var(--main-border);
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-futura);
+    background-color: var(--color-blue);
+}
+
+/* .triangle {
+    --r: 25px; 
+  
+    height: 150px;
+    aspect-ratio: 2.5;
+    -webkit-mask:
+      linear-gradient(0deg,#0000 calc(var(--r)/sqrt(2)),#000 0),
+      radial-gradient(var(--r) at 50% calc(100% - var(--r)*sqrt(2)),#000 98%,#0000 101%);
+    clip-path: polygon(50% 100%,100% 0,0 0);
+    background: linear-gradient(45deg,#FA6900,#C02942);
+  } */
+  /* https://css-generators.com/triangle-shapes/ */
+
+.bottom-mailin {
+    position: relative;
+    margin-top: -1px;
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+    border-bottom: var(--main-border);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-futura);
+    background-color: var(--color-blue);
+    padding: 8px;
+}
+
+.bottom-mailin img {
+    position: relative;
+    left: 47%;
+    width: 50%;
+}
+
+.bottom-mailin h2 {
+    color: var(--color-white);
+    font-size: 20px;
+}
+
+.bottom-mailin p {
+    font-size: 16px;
+}

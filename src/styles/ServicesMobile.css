@@ -1,0 +1,70 @@
+@import url(variables.css);
+
+.top-bar-mobile-services {
+    margin-top: 5vh;
+    position: relative;
+    height: 9.597vh;
+    border-radius: 50px 50px 0 0;
+    border-top: var(--main-border);
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pricesBtnMobile,
+.othersBtnMobile,
+.bundlesBtnMobile {
+    border: none;
+    height: 9.6vh;
+    font-family: var(--font-futura);
+    font-stretch: condensed;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+#starSmileBlue, #starSmilePurple, #starSmileOrange {
+    position: absolute;
+    top: -40%; 
+}
+#starSmileBlue {
+    left: -10%; 
+}
+
+#starSmilePurple, #starSmileOrange {
+    left: -20%;
+}
+
+.pricesBtnMobile span {
+    position: relative; /* Keeps the text from overlapping with the img */
+}
+
+.pricesBtnMobile {
+    border-radius: 45px 0 0 0;
+    background-color: var(--color-blue);
+}
+
+.othersBtnMobile {
+    background-color: var(--color-purple);
+}
+
+.bundlesBtnMobile {
+    background-color: var(--color-yellow);
+    border-radius: 0 45px 0 0;
+}
+
+.bottom-bar-mobile-services {
+    position: relative;
+    margin-top: -1px;
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+    border-bottom: var(--main-border);
+    display: flex;
+    flex-direction: column;
+}

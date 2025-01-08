@@ -3,7 +3,7 @@ import '../styles/MailIn.css'
 const MailIn = () => {
     return (
         <>
-            <div className="main-container-mailIn">
+            <div className="main-container">
                 <div className="top">
 
                 </div>

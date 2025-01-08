@@ -1,5 +1,5 @@
 import '../styles/SideNav.css';
-import filmyColor2 from '../assets/filmy-color1.png';
+import filmyColor1 from '../assets/filmy-color1.png';
 import instagramIcon from '../assets/instagram.png';
 import tikTokIcon from '../assets/TikTok.png';
 import { Link, useRoutes } from 'react-router-dom'
@@ -68,7 +68,7 @@ const SideNav = () => {
             <h1 className='sideNavTitle'>5R PHOTO LAB</h1>
 
             <div className='sidenav'>
-                <Link to="/" onClick={handleResetButtonClick}><img className="filmy-image" src={filmyColor2} alt="Filmy Color Logo" /></Link>
+                <Link to="/" onClick={handleResetButtonClick}><img className="filmy-image" src={filmyColor1} alt="Filmy Color Logo" /></Link>
                 <h1 className="filmy-title">My name is filmy!</h1>
 
                 <Link to="/services">
