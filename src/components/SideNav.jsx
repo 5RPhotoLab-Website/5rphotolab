@@ -70,7 +70,7 @@ const SideNav = () => {
 
     return (
         <>
-            <h1 className='sideNavTitle'>5R PHOTO LAB</h1>
+            <h1 className='sideNavTitle' aria-label="5R PHOTO LAB">5R PHOTO LAB</h1>
 
             <div className='sidenav'>
                 <Link to="/" onClick={handleResetButtonClick}><img className="filmy-image" src={filmyColor1} alt="Filmy Color Logo" /></Link>
