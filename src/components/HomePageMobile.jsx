@@ -7,6 +7,7 @@ import RandWTrainIcons from '../assets/RandWTrainIcons.png'
 import washSqTrains from '../assets/washSqTrains.png'
 import instagramIcon from '../assets/instagram.png';
 import tikTokIcon from '../assets/TikTok.png';
+import { Link } from "react-router-dom";
 
 const HomePageMobile = () => {
     const circles = [
@@ -101,6 +102,8 @@ const HomePageMobile = () => {
                     <div className="phoneNumberMobile">
                         <a href="tel:+16463194106">+1 (646) 319-4106</a>
                     </div>
+
+                    <Link to="/accessible-site"><p style={{ fontFamily: 'Arial', fontSize: '12px', backgroundColor: 'white' }}>Accessible Site</p></Link>
 
                 </section>
                 <section className="feetMobile">
