@@ -8,6 +8,7 @@ import MailInMobile from './MailInMobile';
 import ContactMobile from './ContactMobile';
 import HomePageMobile from "./HomePageMobile";
 import ErrorPage from "./ErrorPage";
+import AccessibleSite from "./AccessibleSite";
 
 
 const SideNavMobile = () => {
@@ -45,6 +46,10 @@ const SideNavMobile = () => {
         {
             path: "/contact",
             element: <ContactMobile />
+        },
+        {
+            path: "/accessible-site",
+            element: <AccessibleSite />
         },
         {
             path: "*",

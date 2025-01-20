@@ -9,6 +9,7 @@ import Contact from './Contact'
 import HomePage from './HomePage';
 import ErrorPage from './ErrorPage';
 import { useState, useEffect } from 'react';
+import AccessibleSite from './AccessibleSite';
 
 const SideNav = () => {
     const [buttonClicked, setButtonClicked] = useState('');
@@ -44,6 +45,10 @@ const SideNav = () => {
         {
             path: "/contact",
             element: <Contact />
+        },
+        {
+            path: "/accessible-site",
+            element: <AccessibleSite />
         },
         {
             path: "*",
@@ -131,7 +136,7 @@ const SideNav = () => {
                         </a>
                     </div>
                 </div>
-
+                <Link to="/accessible-site"><p style={{fontFamily:'Arial', fontSize:'12px', backgroundColor:'white'}}>Accessible Site</p></Link>
             </div>
 
             {element}
