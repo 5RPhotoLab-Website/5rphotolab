@@ -92,9 +92,8 @@ const HomePageMobile = () => {
                 </section>
                 <section className="rectContainerBodyMobile">
                     <div className="addressMobile">
-                        <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">31 Washington</a>
-                        <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank"> Square West</a> <br />
-                        <a id="suite" href="">Suite 3R-C</a>
+                        <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">31 Washington</a> <br />
+                        <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">Square W STE 3-RC</a> <br />
                     </div>
                     <div className="hoursMobile">
                         10AM - 8PM

@@ -3,7 +3,7 @@
 .top-mailin {
     margin-top: 5vh;
     position: relative;
-    height: 27vh;
+    height: 15vh;
     border-radius: 50px 50px 0 0;
     border-top: var(--main-border);
     border-left: var(--main-border);
@@ -26,9 +26,9 @@
     clip-path: polygon(50% 100%,100% 0,0 0);
     background: linear-gradient(45deg,#FA6900,#C02942);
   } */
-  /* https://css-generators.com/triangle-shapes/ */
+/* https://css-generators.com/triangle-shapes/ */
 
-.bottom-mailin {
+.bottom-mailin-mobile {
     position: relative;
     margin-top: -1px;
     border-left: var(--main-border);
@@ -41,17 +41,43 @@
     padding: 8px;
 }
 
-.bottom-mailin img {
+.bottom-mailin-mobile img {
     position: relative;
     left: 47%;
     width: 50%;
 }
 
-.bottom-mailin h2 {
+.bottom-mailin-mobile h2 {
     color: var(--color-white);
     font-size: 20px;
 }
 
-.bottom-mailin p {
+.bottom-mailin-mobile p {
     font-size: 16px;
+}
+
+.video-container-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoMobile {
+    max-width: 100%;
+    width: 61vw;
+    height: 50vh;
+}
+
+.startOrder-mobile, .downloadTemplate {
+    background-color: var(--color-yellow);
+    font-family: var(--font-futura);
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 4vh;
+    padding: 10px;
+}
+
+.downloadTemplate {
+    margin-bottom: 3vh;
 }
