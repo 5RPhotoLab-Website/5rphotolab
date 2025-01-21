@@ -1,9 +1,61 @@
 @import url(variables.css);
 
-.top, .bottom {
+.top, .bottom-mailin {
   background-color: var(--color-blue);
 }
 
-.bottom p, h2 {
+
+.bottom-mailin p, h2 {
   font-family: var(--font-futura);
+}
+
+.video-container, .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoDesktop {
+  max-width: 100%;
+  width: 15.8vw;
+  height: 50vh;
+}
+
+.bottom-mailin {
+  position: relative;
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  border-bottom: var(--main-border);
+  margin-left: 6%;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-mailin p {
+  padding: 10px;
+}
+
+.startOrder {
+  background-color: var(--color-yellow);
+  font-family: var(--font-futura);
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+  margin-top: 1.5vh;
+  padding: 10px;
+}
+
+.startOrder:hover {
+  cursor: pointer;
+}
+
+.startOrder-container {
+  display: flex;
+  justify-content: center;
+}
+
+.startOrder-container button a {
+  text-decoration: none;
 }

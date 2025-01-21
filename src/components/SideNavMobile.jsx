@@ -17,17 +17,15 @@ const SideNavMobile = () => {
 
     const openModal = () => {
         setIsModalOpen(true);
-        console.log("opened");
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
-        console.log("closed")
     };
 
     const handleButtonClick = (buttonName) => {
         setButtonClicked(buttonName);
-        console.log(buttonName)
+        closeModal();
     }
 
     let element = useRoutes([
