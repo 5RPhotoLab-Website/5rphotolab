@@ -13,6 +13,20 @@ const MailInMobile = () => {
                 </div>
                 <div className="bottom-mailin-mobile">
                     <h2>All of our great lab services are available by mail, and getting your film and disposables to us is super easy.</h2>
+                    
+                    <div className="video-container-mobile" >
+                        <iframe
+                            className='videoMobile'
+                            width="350"
+                            height="315"
+                            src="https://www.youtube.com/embed/FLoB1xzZcsc"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                    
                     <p>1. Click here to
                         <button className='startOrder-mobile'><a href="https://5rphotolab.square.site/" target='_blank'>Start Your Order</a></button>
                         <br />
@@ -26,18 +40,7 @@ const MailInMobile = () => {
                         New York, NY 10011</p>
                     <p style={{ paddingLeft: "5vw" }}>Be sure to write <b><u>Do not X-Ray</u></b> on the package.</p>
                     <p >6. Bring the package to your nearest Post Office, FedEx, or UPS - be sure to get a tracking number.</p>
-                    <div className="video-container-mobile" >
-                        <iframe
-                            className='videoMobile'
-                            width="350"
-                            height="315"
-                            src="https://www.youtube.com/embed/FLoB1xzZcsc"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen>
-                        </iframe>
-                    </div>
+                    
 
                     <div className="startOrder-container-mobile">
                         <button className='downloadTemplate'>
