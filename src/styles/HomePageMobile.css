@@ -225,7 +225,7 @@
 .filmyColorOnlyHalfHidden {
     position: absolute;
     top: 15%;
-    left: 63%;
+    left: 65%;
     transform: rotate(-45deg);
 }
 
@@ -319,6 +319,6 @@
 
 .instagramMobile,
 .tiktokMobile {
-    /* margin-top: 5vh; */
+    margin-top: 8vh;
     margin-left: 20vw;
 }
