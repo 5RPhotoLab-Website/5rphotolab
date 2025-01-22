@@ -26,7 +26,7 @@
     font-family: var(--font-futura);
     font-stretch: condensed;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -42,18 +42,18 @@
 .pricesBtn {
     border-radius: 45px 0 0 0;
     background-color: var(--color-blue);
-    width: 24.8rem;
+    width: 30vw;
 }
 
 .othersBtn {
     background-color: var(--color-purple);
-    width: 25rem;
+    width: 30vw;
 }
 
 .bundlesBtn {
     border-radius: 0 45px 0 0;
     background-color: var(--color-yellow);
-    width: 29rem;
+    width: 32vw;
 }
 
 .bundlesTitle {
@@ -61,7 +61,7 @@
     margin-top: 230px;
 }
 
-@media (min-width: 1800px) {
+/* @media (min-width: 1800px) {
     .pricesBtn,
     .othersBtn {
         width: 30rem;
@@ -70,7 +70,7 @@
     .bundlesBtn {
         width: 34rem;
     }
-}
+} */
 
 .bottom {
     position: relative;
@@ -84,16 +84,16 @@
     flex-direction: column;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .top, .bottom {
       width: 290vw;
     }
-  } 
+  }  */
 
+    /* FOR SMALL SCREENS????? */
 @media (max-height: 900px) {
     .bottom {
         margin-left: 7%;
-        /* height: 37.9rem; */
         height: auto;
     }
 }

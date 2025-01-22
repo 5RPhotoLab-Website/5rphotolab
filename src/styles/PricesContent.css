@@ -1,7 +1,7 @@
 @import url('variables.css');
 
 .prices-list {
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 .prices-list-top {
@@ -40,7 +40,6 @@
     color: #095290;
     font-family: var(--font-futura-maxi);
     width: 73px;
-    /* width: auto; */
     flex-shrink: 0;
 }
 
