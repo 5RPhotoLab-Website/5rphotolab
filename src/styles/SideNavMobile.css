@@ -40,10 +40,11 @@
     justify-content: center;
     background-color: var(--main-background-color);
     padding: 20px;
+    margin-left: 8vw;
     border: 3px solid black;
     border-radius: 20px;
     width: 80vw;
-    height: 28vh;
+    height: 26vh;
 }
 
 /* The Close Button */

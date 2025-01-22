@@ -26,7 +26,7 @@ const MailInMobile = () => {
                             allowFullScreen>
                         </iframe>
                     </div>
-                    
+
                     <p>1. Click here to
                         <button className='startOrder-mobile'><a href="https://5rphotolab.square.site/" target='_blank'>Start Your Order</a></button>
                         <br />
@@ -38,7 +38,7 @@ const MailInMobile = () => {
                         31 Washington Square West <br />
                         Suite 3R-C <br />
                         New York, NY 10011</p>
-                    <p style={{ paddingLeft: "5vw" }}>Be sure to write <b><u>Do not X-Ray</u></b> on the package.</p>
+                    <p style={{ paddingLeft: "5vw" }}>Be sure to write <b><u>Do not X-Ray</u></b> <br />on the package.</p>
                     <p >6. Bring the package to your nearest Post Office, FedEx, or UPS - be sure to get a tracking number.</p>
                     
 
