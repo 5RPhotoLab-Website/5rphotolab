@@ -107,7 +107,7 @@ const SideNav = () => {
                     <section className="box-body">
                         <div className="address">
                             <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">31 Washington</a> <br />
-                            <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">Square W STE 3-RC</a> <br />
+                            <a href="https://goo.gl/maps/rQm69yR6bPAjnHyb7" target="_blank">Square W STE 3R-C</a> <br />
                         </div>
                         <div className="hours">
                             10AM - 8PM

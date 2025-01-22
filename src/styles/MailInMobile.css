@@ -1,6 +1,6 @@
 @import url('variables.css');
 
-.top-mailin {
+.top-mailin-mobile {
     margin-top: 5vh;
     position: relative;
     height: 15vh;
@@ -14,19 +14,6 @@
     font-family: var(--font-futura);
     background-color: var(--color-blue);
 }
-
-/* .triangle {
-    --r: 25px; 
-  
-    height: 150px;
-    aspect-ratio: 2.5;
-    -webkit-mask:
-      linear-gradient(0deg,#0000 calc(var(--r)/sqrt(2)),#000 0),
-      radial-gradient(var(--r) at 50% calc(100% - var(--r)*sqrt(2)),#000 98%,#0000 101%);
-    clip-path: polygon(50% 100%,100% 0,0 0);
-    background: linear-gradient(45deg,#FA6900,#C02942);
-  } */
-/* https://css-generators.com/triangle-shapes/ */
 
 .bottom-mailin-mobile {
     position: relative;
@@ -48,12 +35,13 @@
 }
 
 .bottom-mailin-mobile h2 {
-    color: var(--color-white);
-    font-size: 20px;
+    color: black;
+    padding: 10px;
 }
 
 .bottom-mailin-mobile p {
-    font-size: 16px;
+    font-size: 22px;
+    padding: 10px;
 }
 
 .video-container-mobile {
@@ -68,14 +56,32 @@
     height: 50vh;
 }
 
-.startOrder-mobile, .downloadTemplate {
+.startOrder-mobile,
+.downloadTemplate {
     background-color: var(--color-yellow);
     font-family: var(--font-futura);
     font-size: 20px;
     border: 2px solid black;
     border-radius: 10px;
-    margin-top: 4vh;
     padding: 10px;
+}
+
+.downloadTemplate {
+    margin-top: 4vh;
+}
+
+.startOrder-mobile {
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+}
+
+.startOrder-container-mobile {
+    display: flex;
+    justify-content: center;
+}
+
+.startOrder-container-mobile a, .startOrder-mobile a {
+    text-decoration: none;
 }
 
 .downloadTemplate {
