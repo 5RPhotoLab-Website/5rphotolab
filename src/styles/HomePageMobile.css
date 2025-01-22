@@ -224,8 +224,8 @@
 /* Rotated image */
 .filmyColorOnlyHalfHidden {
     position: absolute;
-    top: 15%;
-    left: 65%;
+    top: 10%;
+    left: 63%;
     transform: rotate(-45deg);
 }
 
