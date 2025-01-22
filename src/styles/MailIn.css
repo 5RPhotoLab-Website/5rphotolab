@@ -1,25 +1,54 @@
 @import url(variables.css);
 
-.top, .bottom-mailin {
+.top-mailin {
+  position: relative;
+  text-align: center;
+  width: 70vw;
+  margin-left: 6%;
+  border-radius: 50px 50px 0 0;
+  border-top: var(--main-border);
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  font-family: var(--font-futura);
+}
+
+.top-mailin,
+.bottom-mailin {
   background-color: var(--color-blue);
 }
 
 
-.bottom-mailin p, h2 {
+.bottom-mailin p,
+.top-mailin h1 {
   font-family: var(--font-futura);
 }
 
-.video-container, .top {
+.video-container,
+.top-mailin {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.video-container {
+  margin-top: 3vh;
+}
+
 .videoDesktop {
   max-width: 100%;
-  width: 15.8vw;
-  height: 50vh;
+  width: 18.5vw;
+  height: 60vh;
 }
+
+/* @media screen and (min-height: 2000px) {
+  .videoDesktop {
+    width: 12.8vw;
+    height: 45vh;
+  }
+  .video-container {
+    margin-top: 3vh;
+  }
+} */
 
 .bottom-mailin {
   position: relative;
@@ -32,6 +61,14 @@
   flex-direction: column;
 }
 
+.instructions-container {
+  padding-left: 2vw;
+}
+
+.instructions-container a {
+  text-decoration: none;
+}
+
 .bottom-mailin p {
   padding: 10px;
 }
@@ -42,8 +79,7 @@
   font-size: 20px;
   border: 2px solid black;
   border-radius: 10px;
-  margin-bottom: 2vh;
-  margin-top: 1.5vh;
+  margin-left: 0.5vw;
   padding: 10px;
 }
 
@@ -54,6 +90,7 @@
 .startOrder-container {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 .startOrder-container button a {

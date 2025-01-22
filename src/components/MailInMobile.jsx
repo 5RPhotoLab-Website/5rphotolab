@@ -6,22 +6,26 @@ const MailInMobile = () => {
     return (
         <>
             <div className="main-container-mailin">
-                <div className="top-mailin">
+                <div className="top-mailin-mobile">
                     <div className="triangle"></div>
                     <img src={mailStamp} alt="Mail Stamp" />
 
                 </div>
                 <div className="bottom-mailin-mobile">
-                    {/* <img src={mailStamp} alt="Mail Stamp" /> */}
-                    <h2>We offer mail-in development, scan, and print services!</h2>
-                    <p><b>Not in New York City?</b> We can still develop your film—including all those old disposable cameras you’ve got lying around the house!</p> <br />
-
-                    <p><b>It’s super easy!</b> Mail your film or disposables to <u>31 Washington SQ W STE 3-RC, New York, NY 10011</u>. Please download the template below  and include your contact information 
-                    along with details about what you would like done with your film and/or disposables.</p> <br />
-
-                    <p><b>It’s very important</b> to protect your disposables and film in transit. Stick your film in a plastic Ziplock bag. Some people use envelopes with the bubble padding, but we think that a sturdy box with some protective padding inside, secured by solid tape, is the best way.
-                        Be sure to indicate on the box “Do not X-Ray.” There is more info on what to say about <a href='https://kodakprofessional.com/photographers/resources' target='_blank'>X-Rays here</a>.</p> <br />
-
+                    <h2>All of our great lab services are available by mail, and getting your film and disposables to us is super easy.</h2>
+                    <p>1. Click here to
+                        <button className='startOrder-mobile'><a href="https://5rphotolab.square.site/" target='_blank'>Start Your Order</a></button>
+                        <br />
+                        2. Write us a little note about your order, including the receipt number, or fill out the form below. <br />
+                        3. Place your film in a freezer bag. <br />
+                        4. Place the freezer bag in a padded envelope or a box with padding. <br />
+                        5. Address it to:</p>
+                    <p style={{ paddingLeft: "5vw" }}>5R Photo Lab <br />
+                        31 Washington Square West <br />
+                        Suite 3R-C <br />
+                        New York, NY 10011</p>
+                    <p style={{ paddingLeft: "5vw" }}>Be sure to write <b><u>Do not X-Ray</u></b> on the package.</p>
+                    <p >6. Bring the package to your nearest Post Office, FedEx, or UPS - be sure to get a tracking number.</p>
                     <div className="video-container-mobile" >
                         <iframe
                             className='videoMobile'
@@ -35,16 +39,13 @@ const MailInMobile = () => {
                         </iframe>
                     </div>
 
-                    <div className="startOrder-container">
-                        <button className='startOrder-mobile'><a href="https://5rphotolab.square.site/" target='_blank'>Start Your Order</a></button>
-                    </div>
-                    <div className="startOrder-container">
+                    <div className="startOrder-container-mobile">
                         <button className='downloadTemplate'>
                             <a
                                 href={OrderTemplate}
                                 download="Order Template 5R.pdf"
                             >
-                                Download Template
+                                Download Form
                             </a>
                         </button>
                     </div>
