@@ -217,14 +217,14 @@
     margin-top: 5vh;
     position: relative;
     width: 100vw;
-    height: 35vh;
+    height: 40vh;
     overflow: hidden;
 }
 
 /* Rotated image */
 .filmyColorOnlyHalfHidden {
     position: absolute;
-    top: 10%;
+    top: 13%;
     left: 63%;
     transform: rotate(-45deg);
 }
