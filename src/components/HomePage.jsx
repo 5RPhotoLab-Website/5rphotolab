@@ -3,6 +3,7 @@ import searchIcon from '../assets/search.png'
 import videoMapIcon from '../assets/video-map.png'
 import sixTrainIcon from '../assets/sixTrainIcon.png'
 import RandWTrainIcons from '../assets/RandWTrainIcons.png'
+import washSqTrains from '../assets/washSqTrains.png'
 
 const HomePage = () => {
     return (
@@ -37,6 +38,10 @@ const HomePage = () => {
                             </div>
                         </article>
                         <article className="right-column">
+                            <div className="washSqSubway-desktop">
+                                <p>W 4St-Wash Sq</p>
+                                <img src={washSqTrains} alt="W 4St-Wash Sq Trains" />
+                            </div>
                             <div className="location-info">
                                 <p>
                                     We are conveniently located in Greenwich Village, near New York
