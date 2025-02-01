@@ -6,7 +6,7 @@ const ResponsiveNav = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Create a media query for a width less than 360px (mobile)
+    // Create a media query for a width less than 480px (mobile)
     const mobileQuery = window.matchMedia('(max-width: 480px)');
 
     // Set initial state based on the current screen width

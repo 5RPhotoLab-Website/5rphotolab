@@ -16,8 +16,8 @@ const MailIn = () => {
                                 <button className='startOrder'><a href="https://5rphotolab.square.site/" target='_blank'>Start Your Order</a></button>
                                 <br />
                                 2. Write us a little note about your order, including the order number, or fill out the form below. <br />
-                                3. Place your film in a freezer bag. <br />
-                                4. Place the freezer bag in a padded envelope or a box with padding. <br />
+                                3. Place your film in a ziploc. <br />
+                                4. Place the bag in a padded envelope or a box with padding along with the form. <br />
                                 5. Address it to:</p>
                             <p style={{ fontSize: "22px", paddingLeft: "5vw" }}>5R Photo Lab <br />
                                 31 Washington Square West <br />
