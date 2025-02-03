@@ -278,13 +278,24 @@
 .hoursMobile,
 .phoneNumberMobile {
     margin-top: 10vh;
-}
+}   
 
 .buzzInContainerMobile {
     position: absolute;
     top: 32%;
     right: 5%;
     transform: rotate(15deg);
+}
+
+.buzzInBtn-mobile {
+    background-color: #cef101;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 4px 3px 4px rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    width: 5.25rem;
+    height: 4rem;
+    font-family: var(--font-futura-maxi);
+    cursor: pointer;
 }
 
 .feetMobile {
