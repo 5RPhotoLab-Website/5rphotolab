@@ -107,12 +107,12 @@ const HomePageMobile = () => {
                 </section>
                 <section className="feetMobile">
                     {circles.slice(2).map((circle) => (
-                        <div key={circle.id} className={`circle ${circle.className}`} />
+                        <div key={circle.id} className={`circleMobile ${circle.className}`} />
                     ))}
                 </section>
                 <div className="buzzInContainerMobile">
                     <a href="https://www.5rphotolab.com/" target="_blank">
-                        <button className='buzzInBtn'>buzZz in!</button>
+                        <button className='buzzInBtn-mobile'>buzZz in!</button>
                     </a>
                 </div>
             </div>

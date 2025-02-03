@@ -66,28 +66,28 @@ const SideNavMobile = () => {
 
                         <Link to="/">
                             <div className="container-btn-mobile">
-                                <button className={buttonClicked === 'home' ? 'homeBtn clicked' : 'homeBtn'} onClick={() => handleButtonClick('home')}>
+                                <button className={buttonClicked === 'home' ? 'homeBtn-mobile clicked' : 'homeBtn-mobile'} onClick={() => handleButtonClick('home')}>
                                     <span className="arrowBtnTextHome">home</span>
                                 </button>
                             </div>
                         </Link>
                         <Link to="/services">
                             <div className="container-btn-mobile">
-                                <button className={buttonClicked === 'services' ? 'servicesBtn clicked' : 'servicesBtn'} onClick={() => handleButtonClick('services')}>
+                                <button className={buttonClicked === 'services' ? 'servicesBtn-mobile clicked' : 'servicesBtn-mobile'} onClick={() => handleButtonClick('services')}>
                                     <span className="arrowBtnText">services</span>
                                 </button>
                             </div>
                         </Link>
                         <Link to="/mail-in">
                             <div className="container-btn-mobile">
-                                <button className={buttonClicked === 'mail-in' ? 'mailInBtn clicked' : 'mailInBtn'} onClick={() => handleButtonClick('mail-in')}>
+                                <button className={buttonClicked === 'mail-in' ? 'mailInBtn-mobile clicked' : 'mailInBtn-mobile'} onClick={() => handleButtonClick('mail-in')}>
                                     <span className="arrowBtnText">mail-in</span>
                                 </button>
                             </div>
                         </Link>
                         <Link to="/contact">
                             <div className="container-btn-mobile">
-                                <button className={buttonClicked === 'contact' ? 'contactBtn clicked' : 'contactBtn'} onClick={() => handleButtonClick('contact')}>
+                                <button className={buttonClicked === 'contact' ? 'contactBtn-mobile clicked' : 'contactBtn-mobile'} onClick={() => handleButtonClick('contact')}>
                                     <span className="arrowBtnText">contact</span>
                                 </button>
                             </div>

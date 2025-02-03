@@ -63,17 +63,43 @@
 /* Modal Arrow Buttons */
 
 .container-btn-mobile {
-  filter: drop-shadow(3px 6px 2px rgba(50, 50, 0, .5));
-  width: 50%;
+    filter: drop-shadow(3px 6px 2px rgba(50, 50, 0, .5));
+    width: 50%;
 }
 
-.homeBtn {
-    background-color: var(--color-orange);
+.servicesBtn-mobile,
+.mailInBtn-mobile,
+.contactBtn-mobile,
+.homeBtn-mobile {
     margin: 0.6rem;
     width: 14rem;
     height: 2.5rem;
     border: none;
     clip-path: var(--button-polygon);
+    cursor: pointer;
+}
+
+.servicesBtn-mobile {
+    background-color: var(--color-pink);
+}
+
+.mailInBtn-mobile {
+    background-color: var(--color-purple);
+}
+
+.contactBtn-mobile {
+    background-color: var(--color-blue);
+}
+
+.homeBtn-mobile {
+    background-color: var(--color-orange);
+}
+
+.servicesBtn-mobile.clicked .arrowBtnText,
+.mailInBtn-mobile.clicked .arrowBtnText,
+.contactBtn-mobile.clicked .arrowBtnText {
+    color: var(--main-background-color);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .arrowBtnTextHome {
@@ -81,4 +107,3 @@
     font-family: var(--font-futura-maxi);
     font-size: large;
 }
-
