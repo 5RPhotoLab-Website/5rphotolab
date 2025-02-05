@@ -5,10 +5,14 @@ const PageViewTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Sends a pageview event to Google Analytics when the route changes
-    window.gtag('config', 'AW-353701978', {
-      page_path: location.pathname + location.search,
-    });
+    if (typeof window.gtag === "function") {
+      window.gtag('config', 'AW-353701978', {
+        page_path: location.pathname + location.search,
+      });
+      console.log("Tracking page view:", location.pathname + location.search); // Debugging
+    } else {
+      console.warn("gtag is not defined");
+    }
   }, [location]);
 
   return null;
