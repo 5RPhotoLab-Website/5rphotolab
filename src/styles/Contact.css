@@ -1,11 +1,10 @@
 .contact-page {
-    width: 76.875rem;
-    height: 47.5rem;
-    margin-top: -1.875rem;
-    margin-left: 25vw;
+    width: 69vw;
+    margin-top: -3.555vh;
+    margin-left: 25.5vw;
 }
 
-@media (max-height: 900px) {
+/* @media (max-height: 900px) {
     .contact-page {
         margin-top: -2.5rem;
         height: 44.5rem;
@@ -16,4 +15,4 @@
     .contact-page {
       margin-left: 5rem;
     }
-  } 
+  }  */
