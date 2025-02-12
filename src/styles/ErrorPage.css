@@ -1,0 +1,15 @@
+@import url(variables.css);
+
+.main-container-error {
+    margin-left: 20vw;
+    margin-top: 25vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.bad-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--font-futura);
+}

@@ -19,9 +19,11 @@
     border: none;
     height: 9.6vh;
     font-family: var(--font-futura);
+    color: black;
     font-stretch: condensed;
     font-weight: bold;
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 7vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +44,8 @@
 }
 
 .pricesBtnMobile span {
-    position: relative; /* Keeps the text from overlapping with the img */
+    position: relative; 
+    /* Keeps the text from overlapping with the img */
 }
 
 .pricesBtnMobile {
