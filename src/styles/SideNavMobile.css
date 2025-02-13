@@ -14,6 +14,7 @@
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow: 3px 4px 0px rgba(0, 0, 0, 1);
     bottom: 8vh;
+    background-color: var(--color-yellow);
 }
 
 /* The Modal (background) */

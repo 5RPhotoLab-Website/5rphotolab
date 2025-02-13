@@ -1,5 +1,6 @@
 import "../styles/HomePageMobile.css"
 import filmyColorOnly from '../assets/filmy-color-only.png';
+import FiveRLOGO from '../assets/FiveRLOGO.png';
 import searchIcon from '../assets/search.png'
 import videoMapIconMobile from '../assets/videoMapIconMobile.png'
 import sixTrainIcon from '../assets/sixTrainIcon.png'
@@ -8,6 +9,7 @@ import washSqTrains from '../assets/washSqTrains.png'
 import instagramIcon from '../assets/instagram.png';
 import tikTokIcon from '../assets/TikTok.png';
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const HomePageMobile = () => {
     const circles = [
@@ -17,23 +19,58 @@ const HomePageMobile = () => {
         { id: 4, className: "bottom-right" },
     ];
 
+    const [startMailInPressed, setStartMailInPressed] = useState(false);
+    const [moreInfoPressed, setMoreInfoPressed] = useState(false);
+
+    const handleClick = (setButtonState) => {
+        setButtonState(true);
+        setTimeout(() => {
+            setButtonState(false);
+        }, 200);
+    };
+
     return (
         <div className="main-container-mobile">
-            <h1 className="sideNavTitleMobile">5R PHOTO LAB</h1>
+            <div className="logo-container">
+                <img className="fiverlogo" src={FiveRLOGO} alt="5R Logo" />
+            </div>
+            <div className="welcome">welcome to 5r photo lab!</div>
             <div className="box1"></div>
             <div className="box2"></div>
-            <div className="box3"><p>HEY THERE</p></div>
-            <div className="containerMobile">
-                <div className="leftSideMobile">
-                    <div className="box4"></div>
-                    <div className="box5"><p>MY NAME IS FILMY!</p></div>
-                    <div className="box6"></div>
-                </div>
-                <img className="filmyColorOnly" src={filmyColorOnly} alt="Filmy Color Logo" />
-            </div>
-            <div className="box7"></div>
-            <div className="box8"></div>
-            <div className="box9">KEEP SCROLLING</div>
+
+            <a
+                href="https://5rphotolab.square.site/"
+                target="_blank"
+                className={`startMailInBtn ${startMailInPressed ? "pressed" : ""}`}
+                role="link"
+                onClick={() => handleClick(setStartMailInPressed)}
+            >
+                start your mail in order
+            </a>
+
+            <div className="box3"></div>
+
+            {/* <a
+                href="#"
+                className={`moreInfoBtn ${moreInfoPressed ? "pressed" : ""}`}
+                role="link"
+                onClick={() => handleClick(setMoreInfoPressed)}
+            >
+                more info on <br /> mail in services
+            </a> */}
+            <Link
+                to="/mail-in"
+                className={`moreInfoBtn ${moreInfoPressed ? "pressed" : ""}`}
+                onClick={() => handleClick(setMoreInfoPressed)}
+            >
+                more info on <br /> mail in services
+            </Link>
+
+            <div className="box4"></div>
+            <div className="visitUsBtn">visit us in nyc</div>
+            <div className="box5"></div>
+            <div className="box6"></div>
+
 
             <div className="top-bar-mobile">
                 <img id="searchIconMobile" src={searchIcon} alt="" />
