@@ -34,7 +34,7 @@ const HomePageMobile = () => {
             <div className="logo-container">
                 <img className="fiverlogo" src={FiveRLOGO} alt="5R Logo" />
             </div>
-            <div className="welcome">welcome to 5r photo lab!</div>
+            <div className="welcome">welcome to 5r photo lab!!!</div>
             <div className="box1"></div>
             <div className="box2"></div>
 
