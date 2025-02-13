@@ -63,7 +63,7 @@ const HomePageMobile = () => {
                 className={`moreInfoBtn ${moreInfoPressed ? "pressed" : ""}`}
                 onClick={() => handleClick(setMoreInfoPressed)}
             >
-                more info on <br /> mail in services
+                more info on <br /> mail-in services
             </Link>
 
             <div className="box4"></div>
