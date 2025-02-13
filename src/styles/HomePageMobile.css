@@ -3,9 +3,39 @@
     margin: 0;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
 .sideNavTitleMobile {
     text-align: center;
     font: 400 13vw var(--font-bubblicious);
+}
+
+.startMailInBtn, .moreInfoBtn {
+    color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: var(--font-bubblicious);
+    text-align: center;
+    font-size: 6vw;
+    /* letter-spacing: 0.52px; */
+}
+
+.startMailInBtn {
+    background-color: #1493FF;
+}
+
+.moreInfoBtn {
+    background-color: var(--color-purple);
 }
 
 .box1,
@@ -16,7 +46,7 @@
 .box6,
 .box7,
 .box8,
-.box9 {
+.box9, .welcome {
     background-color: white;
     border: 5px solid black;
     border-radius: 20px;
