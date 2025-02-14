@@ -45,7 +45,7 @@ const HomePageMobile = () => {
                 role="link"
                 onClick={() => handleClick(setStartMailInPressed)}
             >
-                start your mail in order
+                start your mail-in order
             </a>
 
             <div className="box3"></div>
