@@ -7,9 +7,7 @@ const MailInMobile = () => {
         <>
             <div className="main-container-mailin">
                 <div className="top-mailin-mobile">
-                    <div className="triangle"></div>
-                    <img src={mailStamp} alt="Mail Stamp" />
-
+                    {/* <img src={mailStamp} alt="Mail Stamp" /> */}
                 </div>
                 <div className="bottom-mailin-mobile">
                     <h2>All of our great lab services are available by mail, and getting your film and disposables to us is super easy.</h2>

@@ -3,32 +3,103 @@
     margin: 0;
 }
 
+/* .main-container-mobile a {
+    color: white;
+} */
+
 .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
-.sideNavTitleMobile {
-    text-align: center;
-    font: 400 13vw var(--font-bubblicious);
-}
-
-.startMailInBtn, .moreInfoBtn {
-    color: white;
-    border: 5px solid black;
+.welcome {
+    background-color: white;
+    border: 4px solid black;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
     font-family: var(--font-bubblicious);
     text-align: center;
     font-size: 6vw;
-    /* letter-spacing: 0.52px; */
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
 }
+
+.box1,
+.box2,
+.startMailInBtn,
+.moreInfoBtn,
+.box3,
+.box4,
+.visitUsBtn {
+    margin-top: 3vh;
+}
+
+.box5,
+.box6 {
+    margin-top: 2vh;
+}
+
+.startMailInBtn {
+    width: 70vw;
+}
+
+.moreInfoBtn {
+    width: 49vw;
+    margin-left: 40vw;
+}
+
+@keyframes buttonPress {
+    0% {
+        transform: translateY(-10px);
+        box-shadow: 0px 12px 1px #141211;
+    }
+
+    5% {
+        transform: translateY(10px);
+        box-shadow: 0 0 0;
+    }
+
+    10% {
+        transform: translateY(-10px);
+        box-shadow: 0px 12px 1px #141211;
+    }
+
+    100% {
+        transform: translateY(-10px);
+        box-shadow: 0px 12px 1px #141211;
+    }
+}
+
+.startMailInBtn,
+.moreInfoBtn {
+    border: 4px solid black;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--font-bubblicious);
+    text-align: center;
+    font-size: 5vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    position: relative;
+    animation: buttonPress 8s infinite;
+}
+
+
+/* Click or automatic press effect */
+.pressed {
+    transform: translateY(10px) !important;
+    box-shadow: 0 0 0 !important;
+}
+
 
 .startMailInBtn {
     background-color: #1493FF;
@@ -44,23 +115,22 @@
 .box4,
 .box5,
 .box6,
-.box7,
-.box8,
-.box9, .welcome {
+.visitUsBtn {
     background-color: white;
-    border: 5px solid black;
+    border: 4px solid black;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
     font-family: var(--font-bubblicious);
     text-align: center;
     font-size: 6vw;
 }
 
 .box1,
-.box7 {
+.box3,
+.box5,
+.box6 {
     width: 10.833vw;
     height: 2vh;
 }
@@ -70,15 +140,19 @@
 }
 
 .box6 {
-    margin-left: 10vw;
+    margin-left: 30vw;
 }
 
-.box7 {
+.box5 {
+    margin-left: 50vw;
+}
+
+.box3 {
     margin-left: 20vw;
 }
 
-.box8 {
-    margin-left: 35vw;
+.box4 {
+    margin-left: 60vw;
 }
 
 .box2 {
@@ -87,38 +161,13 @@
     margin-left: 40vw;
 }
 
-.box3 {
-    width: 40vw;
-    height: 7vh;
-}
-
-.box4,
-.box6,
-.box8 {
+.box4 {
     width: 18.333vw;
     height: 3.444vh;
 }
 
-.box5 {
-    width: 30vw;
-    height: 7vh;
-    margin-top: 5vh;
-}
 
-.box4,
-.box6,
-.box7,
-.box8 {
-    margin-top: 5vh;
-}
-
-.box2,
-.box3 {
-    margin-top: 3vh;
-}
-
-.box9 {
-    margin-top: 3vh;
+.visitUsBtn {
     margin-left: 38vw;
     width: 52vw;
     height: 7vh;
@@ -151,7 +200,7 @@
 /* Top-Bar */
 
 .top-bar-mobile {
-    margin-top: 10vh;
+    margin-top: 3vh;
     position: relative;
     height: 9.597vh;
     /* width: 90vw; */
@@ -179,9 +228,6 @@
     border: var(--main-border);
     background-color: var(--color-purple);
     margin-top: -4px;
-    /* height: 84.123vh; */
-    /* height: auto; */
-    /* width: 90vw; */
 }
 
 .header-box-mobile {
@@ -267,7 +313,7 @@
     flex-direction: column;
     width: 96vw;
     height: 50vh;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
 }
 
 .eyesMobile {
@@ -308,7 +354,7 @@
 .hoursMobile,
 .phoneNumberMobile {
     margin-top: 10vh;
-}   
+}
 
 .buzzInContainerMobile {
     position: absolute;
@@ -361,6 +407,6 @@
 
 .instagramMobile,
 .tiktokMobile {
-    margin-top: 12vh;
+    margin-top: 5vh;
     margin-left: 20vw;
 }
