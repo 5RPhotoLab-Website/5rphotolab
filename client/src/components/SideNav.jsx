@@ -10,9 +10,21 @@ import HomePage from './HomePage';
 import ErrorPage from './ErrorPage';
 import { useState, useEffect } from 'react';
 import AccessibleSite from './AccessibleSite';
+import ItemDetails from '../pages/ItemDetails';
+import CheckoutForm from './CheckoutForm';
 
 const SideNav = () => {
     const [buttonClicked, setButtonClicked] = useState('');
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            const response = await fetch('http://localhost:5050/api/items');
+            const data = await response.json();
+            setItems(data);
+        }
+        fetchItems();
+    }, []);
 
     const circles = [
         { id: 1, className: "top-left" },
@@ -32,7 +44,7 @@ const SideNav = () => {
     let element = useRoutes([
         {
             path: "/",
-            element: <HomePage />
+            element: <HomePage items={items}/>
         },
         {
             path: "/services",
@@ -49,6 +61,14 @@ const SideNav = () => {
         {
             path: "/accessible-site",
             element: <AccessibleSite />
+        },
+        {
+            path: "/items/:id",
+            element: <ItemDetails items={items} />
+        },
+        {
+            path:"/checkout",
+            element: <CheckoutForm />
         },
         {
             path: "*",
@@ -70,7 +90,7 @@ const SideNav = () => {
 
     return (
         <>
-            <h1 className='sideNavTitle' aria-label="5R PHOTO LAB">5R PHOTO LAB</h1>
+            {/* <h1 className='sideNavTitle' aria-label="5R PHOTO LAB">5R PHOTO LAB</h1>
 
             <div className='sidenav'>
                 <Link to="/" onClick={handleResetButtonClick}><img className="filmy-image" src={filmyColor1} alt="Filmy Color Logo" /></Link>
@@ -136,7 +156,7 @@ const SideNav = () => {
                     </div>
                 </div>
                 <Link to="/accessible-site"><p style={{fontFamily:'Arial', fontSize:'12px', backgroundColor:'white'}}>Accessible Site</p></Link>
-            </div>
+            </div> */}
 
             {element}
         </>

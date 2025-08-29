@@ -4,8 +4,10 @@ import videoMapIcon from '../assets/video-map.png'
 import sixTrainIcon from '../assets/sixTrainIcon.png'
 import RandWTrainIcons from '../assets/RandWTrainIcons.png'
 import washSqTrains from '../assets/washSqTrains.png'
+import Item from './Item'
 
-const HomePage = () => {
+const HomePage = ({ items }) => {
+
     return (
         <>
             <div className="main-container">
@@ -53,6 +55,24 @@ const HomePage = () => {
                             </div>
                         </article>
                     </section>
+                </div>
+
+                <div>
+                    {
+                        items && items.length > 0 ?
+                            items.map((item, index) =>
+
+                                <Item
+                                    key={item.id}
+                                    id={item.id}
+                                    image={item.image}
+                                    name={item.name}
+                                    price={item.price}
+                                    category={item.category}
+                                    description={item.description} />
+
+                            ) : <h3 className="noResults">{'No Items Yet 😞'}</h3>
+                    }
                 </div>
             </div>
         </>
