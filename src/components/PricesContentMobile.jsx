@@ -24,16 +24,15 @@ const PricesContentMobile = () => {
 
     const moreData = [
         { price: "$29.99", description: "120 Dev&Scan" },
-        { price: "$19.99", description: "110 Dev&Scan" },
-        { price: "$19.99", description: "APS Dev&Scan" },
+        { price: "$21.99", description: "110 Dev&Scan" },
+        { price: "$21.99", description: "APS Dev&Scan" },
         { price: "$20.00", description: "Negatives Scan per Strip" },
         { price: "$05.00", description: "Scan per Slide/Print, 10 Minimum" },
     ];
 
     const addOnsData = [
         { price: "$45.00", description: "Same-Day 35mm Color Dev&Scan" },
-        { price: "$35.00", description: "Next-Day 35mm Color Dev&Scan" },
-        { price: "$15.99", description: "Three-Day 35mm Color Dev&Scan" }
+        { price: "$35.00", description: "Next-Day 35mm Color Dev&Scan" }
     ];
 
     return (
