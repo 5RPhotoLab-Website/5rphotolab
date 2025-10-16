@@ -18,7 +18,7 @@ const PricesContent = () => {
     const printData = [
         { price: "$07.00", description: "24-27 Exp. (4X6 Prints)" },
         { price: "$09.00", description: "36 Exp. (4X6 Prints)" },
-        { price: "$12.00", description: "8X10 Print" },
+        { price: "$15.00", description: "8X10 Print" },
         { price: "$15.00", description: "8X12 Print" },
     ];
 
