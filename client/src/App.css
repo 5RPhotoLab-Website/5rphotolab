@@ -1,17 +1,17 @@
-@import url('./styles/variables.css');
+/* @import url('./styles/variables.css');
 
 #root {
-  /* text-align: center;
+  text-align: center;
   background-color: var(--main-background-color);
-  margin-left: 36vh; */
+  margin-left: 36vh;
   margin: 0;
   padding: 0;
-}
-
+} */
+/* 
 .mainApp {
   margin: 0;
   padding: 0;
-}
+} */
 
 /* @media (max-width: 767px) {
   body {
@@ -19,4 +19,5 @@
     transform-origin: 0 0;
   }
 } */
+
 

@@ -1,47 +1,79 @@
 import { pool } from "../config/database.js";
-import { hashPassword, comparePassword, generateToken, verifyToken } from '../config/auth.js';
-import { requireAuth } from '../middleware/authMiddleware.js';
+import { hashPassword, comparePassword, generateToken } from "../config/auth.js";
 
 const createUserSignUp = async (req, res) => {
-    const { email, password } = req.body
-    if (!email || !password) return res.status(400).json({ error: 'Missing fields' })
+    const { email, password } = req.body;
+    if (!email || !password)
+        return res.status(400).json({ error: "Missing fields" });
 
     try {
-        const hashed = await hashPassword(password)
+        const hashed = await hashPassword(password);
         const result = await pool.query(
-            'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email',
+            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
             [email, hashed]
-        )
-        const token = generateToken(result.rows[0])
-        res.json({ token, user: result.rows[0] })
+        );
+
+        const user = result.rows[0];
+        const token = generateToken(user);
+
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "lax",
+            secure: true, // set true when using HTTPS
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        });
+
+        res.json({ user });
     } catch (err) {
-        res.status(500).json({ error: 'Email already in use or server error' })
+        res.status(500).json({ error: "Email already in use or server error" });
     }
-}
+};
 
 const createUserLogin = async (req, res) => {
-    const { email, password } = req.body
+    const { email, password } = req.body;
     try {
-        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email])
-        const user = result.rows[0]
+        const result = await pool.query("SELECT * FROM users WHERE email = $1", [
+            email,
+        ]);
+        const user = result.rows[0];
+
         if (!user || !(await comparePassword(password, user.password))) {
-            return res.status(401).json({ error: 'Invalid credentials' })
+            return res.status(401).json({ error: "Invalid credentials" });
         }
 
-        const token = generateToken(user)
-        res.json({ token, user: { id: user.id, email: user.email } })
+        const token = generateToken(user);
+
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "lax",
+            secure: true, // true in production HTTPS
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+        });
+
+        res.json({ user: { id: user.id, email: user.email } });
     } catch (err) {
-        res.status(500).json({ error: 'Server error' })
+        res.status(500).json({ error: "Server error" });
     }
-}
+};
 
 const getUser = async (req, res) => {
     res.json({
         user: {
             id: req.user.userId,
-            email: req.user.email
-        }
+            email: req.user.email,
+        },
     });
-}
+};
 
-export default { createUserSignUp, createUserLogin, getUser }
+// optional: logout
+const logoutUser = async (req, res) => {
+    res.clearCookie("token");
+    res.json({ message: "Logged out" });
+};
+
+export default {
+    createUserSignUp,
+    createUserLogin,
+    getUser,
+    logoutUser,
+};

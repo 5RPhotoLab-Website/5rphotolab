@@ -3,10 +3,10 @@ import '../styles/Services.css';
 import starSmileBlue from '../assets/star-smile-blue.png'
 import starSmilePurple from '../assets/star-smile-purple.png'
 import starSmileOrange from '../assets/star-smile-orange.png'
-import PricesContent from "./PricesContent";
-import OthersContent from "./OthersContent";
+import PricesContent from "../components/PricesContent";
+import OthersContent from "../components/OthersContent";
 
-const Services = () => {
+const ServicesPage = () => {
     const [activeButton, setActiveButton] = useState('pricesBtn');
 
     const handleButtonClick = (buttonName) => {
@@ -66,4 +66,4 @@ const Services = () => {
     )
 }
 
-export default Services;
+export default ServicesPage;

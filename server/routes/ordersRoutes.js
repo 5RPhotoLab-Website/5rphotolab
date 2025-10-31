@@ -6,9 +6,9 @@ const ordersRouter = express.Router();
 
 ordersRouter.use(requireAuth); // all routes require authentication
 
-ordersRouter.post('/', OrdersController.createOrder);
+ordersRouter.post('/create', OrdersController.createOrder);
 ordersRouter.get('/', OrdersController.getUserOrders);
-ordersRouter.get('/:orderId', OrdersController.getOrderById);
+ordersRouter.get('/:orderId', OrdersController.getOrderItemsById);
 ordersRouter.delete('/:orderId', OrdersController.deleteOrder);
 
 

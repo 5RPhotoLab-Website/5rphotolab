@@ -1,7 +1,7 @@
 import '../styles/MailIn.css'
 import OrderTemplate from '../assets/Order Template 5R.pdf';
 
-const MailIn = () => {
+const MailInPage = () => {
     return (
         <>
             <div className="main-container">
@@ -68,4 +68,4 @@ const MailIn = () => {
     )
 }
 
-export default MailIn;
+export default MailInPage;

@@ -66,15 +66,18 @@ const createUsersTable = async () => {
     }
 }
 
-createUsersTable()
+// createUsersTable()
 
 const createOrdersTable = async () => {
     const createOrdersTableQuery = `
         CREATE TABLE IF NOT EXISTS orders (
             id SERIAL PRIMARY KEY,
-            user_id INTEGER REFERENCES users(id),
-            total_amount INTEGER,
-            status VARCHAR(50),
+            user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+            total_amount NUMERIC(10,2) NOT NULL,
+            status VARCHAR(50) DEFAULT 'PENDING',
+            payment_id TEXT,                     
+            payment_status TEXT,                 
+            payment_receipt_url TEXT,             
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
     `
@@ -86,7 +89,7 @@ const createOrdersTable = async () => {
     }
 }
 
-createOrdersTable();
+// createOrdersTable();
 
 const createOrderItemsTable = async () => {
     const createOrderItemsTableQuery = `
@@ -109,3 +112,42 @@ const createOrderItemsTable = async () => {
 }
 
 createOrderItemsTable();
+
+const createCartsTable = async () => {
+    const createCartsTableQuery = `
+        CREATE TABLE IF NOT EXISTS carts (
+            id SERIAL PRIMARY KEY,
+            user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+    `
+    try {
+        const res = await pool.query(createCartsTableQuery)
+        console.log('🎉 carts table created successfully')
+    } catch (error) {
+        console.error('⚠️ error creating carts table', error)
+    }
+}
+
+// createCartsTable();
+
+const createCartItemsTable = async () => {
+    const createCartItemsTableQuery = `
+        CREATE TABLE IF NOT EXISTS cart_items (
+            id SERIAL PRIMARY KEY,
+            cart_id INTEGER NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
+            item_id INTEGER NOT NULL REFERENCES items(id),
+            quantity INTEGER NOT NULL,
+            unit_price NUMERIC(10,2) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+    `
+    try {
+        const res = await pool.query(createCartItemsTableQuery)
+        console.log('🎉 cart_items table created successfully')
+    } catch (error) {
+        console.error('⚠️ error creating cart_items table', error)
+    }
+}
+
+// createCartItemsTable();

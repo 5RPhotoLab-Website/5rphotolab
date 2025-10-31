@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/AccessibleSite.css';
 
-const AccessibleSite = () => {
+const AccessibleSitePage = () => {
     return (
         <div className='main-container-accessible' style={{backgroundColor: 'white', fontFamily:'Arial', fontSize:'12px'}} role="main">
             <header>
@@ -54,4 +54,4 @@ const AccessibleSite = () => {
     );
 };
 
-export default AccessibleSite;
+export default AccessibleSitePage;

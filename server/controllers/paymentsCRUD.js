@@ -1,4 +1,4 @@
-// server/controllers/paymentsController.js
+// server/controllers/paymentsCRUD.js
 import axios from 'axios';
 import crypto from 'crypto';
 import dotenv from 'dotenv';

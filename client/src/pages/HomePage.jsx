@@ -4,7 +4,7 @@ import videoMapIcon from '../assets/video-map.png'
 import sixTrainIcon from '../assets/sixTrainIcon.png'
 import RandWTrainIcons from '../assets/RandWTrainIcons.png'
 import washSqTrains from '../assets/washSqTrains.png'
-import Item from './Item'
+import Item from '../components/Item'
 
 const HomePage = ({ items }) => {
 
@@ -57,7 +57,7 @@ const HomePage = ({ items }) => {
                     </section>
                 </div>
 
-                <div>
+                {/* <div>
                     {
                         items && items.length > 0 ?
                             items.map((item, index) =>
@@ -73,7 +73,7 @@ const HomePage = ({ items }) => {
 
                             ) : <h3 className="noResults">{'No Items Yet 😞'}</h3>
                     }
-                </div>
+                </div> */}
             </div>
         </>
     )

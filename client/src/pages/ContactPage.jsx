@@ -1,7 +1,7 @@
 import contactPage from '../assets/contactPage.png'
 import '../styles/Contact.css'
 
-const Contact = () => {
+const ContactPage = () => {
     return (
         <>
             <img className="contact-page" src={contactPage} alt="Contact Information" useMap='#image-map' />
@@ -18,4 +18,4 @@ const Contact = () => {
     )
 }
 
-export default Contact;
+export default ContactPage;

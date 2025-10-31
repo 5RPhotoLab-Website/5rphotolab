@@ -3,28 +3,28 @@ import filmyColor1 from '../assets/filmy-color1.png';
 import instagramIcon from '../assets/instagram.png';
 import tikTokIcon from '../assets/TikTok.png';
 import { Link, useRoutes } from 'react-router-dom'
-import Services from './Services'
-import MailIn from './MailIn'
-import Contact from './Contact'
-import HomePage from './HomePage';
-import ErrorPage from './ErrorPage';
+import ServicesPage from '../pages/ServicesPage.jsx'
+import MailInPage from '../pages/MailInPage.jsx'
+import ContactPage from '../pages/ContactPage.jsx'
+import HomePage from '../pages/HomePage.jsx';
+import ErrorPage from '../pages/ErrorPage.jsx';
 import { useState, useEffect } from 'react';
-import AccessibleSite from './AccessibleSite';
-import ItemDetails from '../pages/ItemDetails';
+import AccessibleSitePage from '../pages/AccessibleSitePage.jsx';
+import ItemDetailsPage from '../pages/ItemDetailsPage';
 import CheckoutForm from './CheckoutForm';
 
 const SideNav = () => {
     const [buttonClicked, setButtonClicked] = useState('');
-    const [items, setItems] = useState([]);
+    // const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        const fetchItems = async () => {
-            const response = await fetch('http://localhost:5050/api/items');
-            const data = await response.json();
-            setItems(data);
-        }
-        fetchItems();
-    }, []);
+    // useEffect(() => {
+    //     const fetchItems = async () => {
+    //         const response = await fetch('http://localhost:5050/api/items');
+    //         const data = await response.json();
+    //         setItems(data);
+    //     }
+    //     fetchItems();
+    // }, []);
 
     const circles = [
         { id: 1, className: "top-left" },
@@ -41,40 +41,40 @@ const SideNav = () => {
         }
     }, []);
 
-    let element = useRoutes([
-        {
-            path: "/",
-            element: <HomePage items={items}/>
-        },
-        {
-            path: "/services",
-            element: <Services />
-        },
-        {
-            path: "/mail-in",
-            element: <MailIn />
-        },
-        {
-            path: "/contact",
-            element: <Contact />
-        },
-        {
-            path: "/accessible-site",
-            element: <AccessibleSite />
-        },
-        {
-            path: "/items/:id",
-            element: <ItemDetails items={items} />
-        },
-        {
-            path:"/checkout",
-            element: <CheckoutForm />
-        },
-        {
-            path: "*",
-            element: <ErrorPage />
-        }
-    ]);
+    // let element = useRoutes([
+    //     {
+    //         path: "/",
+    //         element: <HomePage items={items}/>
+    //     },
+    //     {
+    //         path: "/services",
+    //         element: <ServicesPage />
+    //     },
+    //     {
+    //         path: "/mail-in",
+    //         element: <MailInPage />
+    //     },
+    //     {
+    //         path: "/contact",
+    //         element: <ContactPage />
+    //     },
+    //     {
+    //         path: "/accessible-site",
+    //         element: <AccessibleSitePage />
+    //     },
+    //     {
+    //         path: "/items/:id",
+    //         element: <ItemDetailsPage items={items} />
+    //     },
+    //     {
+    //         path:"/checkout",
+    //         element: <CheckoutForm />
+    //     },
+    //     {
+    //         path: "*",
+    //         element: <ErrorPage />
+    //     }
+    // ]);
 
     const handleButtonClick = (buttonName) => {
         setButtonClicked(buttonName);
@@ -90,7 +90,7 @@ const SideNav = () => {
 
     return (
         <>
-            {/* <h1 className='sideNavTitle' aria-label="5R PHOTO LAB">5R PHOTO LAB</h1>
+            <h1 className='sideNavTitle' aria-label="5R PHOTO LAB">5R PHOTO LAB</h1>
 
             <div className='sidenav'>
                 <Link to="/" onClick={handleResetButtonClick}><img className="filmy-image" src={filmyColor1} alt="Filmy Color Logo" /></Link>
@@ -156,9 +156,9 @@ const SideNav = () => {
                     </div>
                 </div>
                 <Link to="/accessible-site"><p style={{fontFamily:'Arial', fontSize:'12px', backgroundColor:'white'}}>Accessible Site</p></Link>
-            </div> */}
+            </div>
 
-            {element}
+            {/* {element} */}
         </>
     )
 }

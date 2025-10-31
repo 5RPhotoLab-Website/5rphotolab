@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import '../styles/ItemDetails.css'
 
-const ItemDetails = ({ items }) => {
+const ItemDetailsPage = ({ items }) => {
     const { id } = useParams()
     const [item, setItem] = useState({id: 0, name: "", price: "", image: "", description: "", category: ""})
 
@@ -19,7 +19,7 @@ const ItemDetails = ({ items }) => {
 
     return (
         <div className="ItemDetails">
-            <main id="item-content" class="item-info">
+            <main id="item-content" className="item-info">
                 <div className="image-container">
                     <img id="image" src={item.image} />
                 </div>
@@ -34,4 +34,4 @@ const ItemDetails = ({ items }) => {
     )
 }
 
-export default ItemDetails;
+export default ItemDetailsPage;

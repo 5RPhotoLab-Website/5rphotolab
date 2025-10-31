@@ -1,9 +1,11 @@
 import { pool } from "../config/database.js";
+import { createOrderService } from '../services/orderService.js';
 
 
 const createOrder = async (req, res) => {
     try {
-        const userId = req.user.id;
+        const userId = req.user?.id;
+
         const { items, totalAmount, status } = req.body;
 
         if (!items || !Array.isArray(items) || items.length === 0) {
@@ -17,30 +19,38 @@ const createOrder = async (req, res) => {
         // Start a transaction
         await pool.query("BEGIN");
 
-        // Insert into orders table
-        const orderResult = await pool.query(
-            `INSERT INTO orders (user_id, total_amount, status)
-       VALUES ($1, $2, $3)
-       RETURNING *`,
-            [userId, totalAmount, status || 'PENDING']
-        );
+        const order = await createOrderService(userId, items, totalAmount);
+        if (status) {
+            await pool.query(`UPDATE orders SET status=$1 WHERE id=$2`, [
+                status,
+                order.id,
+            ]);
+        }
 
-        const order = orderResult.rows[0];
+        // Insert into orders table
+        //     const orderResult = await pool.query(
+        //         `INSERT INTO orders (user_id, total_amount, status)
+        //    VALUES ($1, $2, $3)
+        //    RETURNING *`,
+        //         [userId, totalAmount, status || 'PENDING']
+        //     );
+
+        //     const order = orderResult.rows[0];
 
         // Insert each item into order_items
-        for (const item of items) {
-            const { item_id, quantity, unit_price } = item;
-            if (!item_id || !quantity || !unit_price) {
-                await pool.query("ROLLBACK");
-                return res.status(400).json({ error: "Each item must include item_id, quantity, and unit_price" });
-            }
+        // for (const item of items) {
+        //     const { item_id, quantity, unit_price } = item;
+        //     if (!item_id || !quantity || !unit_price) {
+        //         await pool.query("ROLLBACK");
+        //         return res.status(400).json({ error: "Each item must include item_id, quantity, and unit_price" });
+        //     }
 
-            await pool.query(
-                `INSERT INTO order_items (order_id, item_id, quantity, unit_price)
-         VALUES ($1, $2, $3, $4)`,
-                [order.id, item_id, quantity, unit_price]
-            );
-        }
+        //     await pool.query(
+        //         `INSERT INTO order_items (order_id, item_id, quantity, unit_price)
+        //  VALUES ($1, $2, $3, $4)`,
+        //         [order.id, item_id, quantity, unit_price]
+        //     );
+        // }
 
         // Commit transaction
         await pool.query("COMMIT");
@@ -53,22 +63,6 @@ const createOrder = async (req, res) => {
     }
 };
 
-
-// const getUserOrders = async (req, res) => {
-//     try {
-//         // req.user comes from requireAuth middleware
-//         const userId = req.user.userId;
-
-//         const results = await pool.query(
-//             'SELECT * FROM orders WHERE user_id = $1 ORDER BY id ASC',
-//             [userId]
-//         );
-
-//         res.status(200).json(results.rows);
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// }
 
 const getUserOrders = async (req, res) => {
     try {
@@ -100,25 +94,28 @@ const getUserOrders = async (req, res) => {
     }
 };
 
-const getOrderById = async (req, res) => {
+const getOrderItemsById = async (req, res) => {
     try {
         const orderId = parseInt(req.params.orderId);
         const userId = req.user.id;
 
         const result = await pool.query(
-            `SELECT * FROM orders WHERE id = $1 AND user_id = $2`,
-            [orderId, userId]
+            `SELECT oi.*, i.name, i.description
+            FROM order_items oi
+            JOIN items i ON oi.item_id = i.id
+            WHERE oi.order_id = $1`,
+            [orderId]
         );
 
         if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Order not found' });
+            return res.status(404).json({ error: 'Order Details not found' });
         }
 
-        res.status(200).json(result.rows[0]);
+        res.status(200).json(result.rows);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-};
+}
 
 const deleteOrder = async (req, res) => {
     try {
@@ -146,6 +143,4 @@ const deleteOrder = async (req, res) => {
 
 
 
-
-
-export default { getUserOrders, createOrder, getOrderById, deleteOrder };
+export default { getUserOrders, createOrder, getOrderItemsById, deleteOrder };

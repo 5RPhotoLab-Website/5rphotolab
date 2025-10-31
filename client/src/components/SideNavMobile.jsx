@@ -7,8 +7,8 @@ import ServicesMobile from './ServicesMobile';
 import MailInMobile from './MailInMobile';
 import ContactMobile from './ContactMobile';
 import HomePageMobile from "./HomePageMobile";
-import ErrorPage from "./ErrorPage";
-import AccessibleSite from "./AccessibleSite";
+import ErrorPage from "../pages/ErrorPage";
+import AccessibleSitePage from "../pages/AccessibleSitePage";
 
 
 const SideNavMobile = () => {
@@ -47,7 +47,7 @@ const SideNavMobile = () => {
         },
         {
             path: "/accessible-site",
-            element: <AccessibleSite />
+            element: <AccessibleSitePage />
         },
         {
             path: "*",
