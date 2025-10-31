@@ -1,0 +1,18 @@
+
+
+
+:root{
+  background-color: #7FFF00;
+}
+
+
+/* @font-face {
+  font-family: 'Bubblicious';
+  src: url('/src/assets/fonts/Bubblicious.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
