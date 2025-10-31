@@ -13,6 +13,7 @@ import CheckoutForm from './components/CheckoutForm';
 import ErrorPage from './pages/ErrorPage';
 import Login from './components/Login';
 
+const API_BASE_URL = import.meta.env.API_BASE_URL;
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await fetch('http://localhost:5050/api/items');
+      const response = await fetch(`${API_BASE_URL}/api/items`);
       const data = await response.json();
       setItems(data);
     }

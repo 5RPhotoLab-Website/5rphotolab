@@ -124,6 +124,8 @@
 
 import { useEffect, useState } from "react";
 
+
+const API_BASE_URL = import.meta.env.API_BASE_URL;
 const isSandbox = import.meta.env.VITE_SQUARE_ENV === "sandbox";
 const appId = isSandbox
   ? import.meta.env.VITE_SQUARE_SANDBOX_APP_ID
@@ -167,7 +169,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch('http://localhost:5050/api/auth/user', {
+        const res = await fetch(`${API_BASE_URL}/api/auth/user`, {
           method: 'GET',
           headers: { "Content-Type": "application/json" },
           credentials: "include", // ensures cookies (for logged-in user)
