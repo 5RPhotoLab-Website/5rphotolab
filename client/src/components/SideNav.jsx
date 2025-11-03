@@ -41,40 +41,40 @@ const SideNav = () => {
         }
     }, []);
 
-    // let element = useRoutes([
-    //     {
-    //         path: "/",
-    //         element: <HomePage items={items}/>
-    //     },
-    //     {
-    //         path: "/services",
-    //         element: <ServicesPage />
-    //     },
-    //     {
-    //         path: "/mail-in",
-    //         element: <MailInPage />
-    //     },
-    //     {
-    //         path: "/contact",
-    //         element: <ContactPage />
-    //     },
-    //     {
-    //         path: "/accessible-site",
-    //         element: <AccessibleSitePage />
-    //     },
-    //     {
-    //         path: "/items/:id",
-    //         element: <ItemDetailsPage items={items} />
-    //     },
-    //     {
-    //         path:"/checkout",
-    //         element: <CheckoutForm />
-    //     },
-    //     {
-    //         path: "*",
-    //         element: <ErrorPage />
-    //     }
-    // ]);
+    let element = useRoutes([
+        {
+            path: "/",
+            element: <HomePage/>
+        },
+        {
+            path: "/services",
+            element: <ServicesPage />
+        },
+        {
+            path: "/mail-in",
+            element: <MailInPage />
+        },
+        {
+            path: "/contact",
+            element: <ContactPage />
+        },
+        {
+            path: "/accessible-site",
+            element: <AccessibleSitePage />
+        },
+        {
+            path: "/items/:id",
+            element: <ItemDetailsPage />
+        },
+        {
+            path:"/checkout",
+            element: <CheckoutForm />
+        },
+        {
+            path: "*",
+            element: <ErrorPage />
+        }
+    ]);
 
     const handleButtonClick = (buttonName) => {
         setButtonClicked(buttonName);
@@ -158,7 +158,7 @@ const SideNav = () => {
                 <Link to="/accessible-site"><p style={{fontFamily:'Arial', fontSize:'12px', backgroundColor:'white'}}>Accessible Site</p></Link>
             </div>
 
-            {/* {element} */}
+            {element}
         </>
     )
 }

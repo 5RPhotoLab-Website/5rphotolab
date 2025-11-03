@@ -313,7 +313,7 @@
     flex-direction: column;
     width: 96vw;
     height: 50vh;
-    /* margin-bottom: 5vh; */
+    margin-top: 5vh;
 }
 
 .eyesMobile {

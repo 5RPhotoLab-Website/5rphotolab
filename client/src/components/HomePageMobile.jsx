@@ -117,9 +117,9 @@ const HomePageMobile = () => {
                 </div>
             </div>
 
-            <div className="image-container">
+            {/* <div className="image-container">
                 <img className="filmyColorOnlyHalfHidden" src={filmyColorOnly} alt="Filmy Color Logo" />
-            </div>
+            </div> */}
 
             <div className="rectangleContainerMobile">
                 <section className="eyesMobile">
