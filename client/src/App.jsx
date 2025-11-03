@@ -69,9 +69,9 @@ function App() {
 
   return (
     <div className="bg-mainBackground">
-      {/* <ResponsiveNav /> */}
-      <SideNav />
-      {element}
+      <ResponsiveNav />
+      {/* <SideNav /> */}
+      {/* {element} */}
     </div>
   )
 }
