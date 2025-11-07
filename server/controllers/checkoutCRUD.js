@@ -28,6 +28,9 @@ export const checkout = async (req, res) => {
   const client = await pool.connect();
 
   try {
+    console.log("🧭 Square env:", squareEnv);
+console.log("🔹 Received nonce:", nonce);
+
     // 1️⃣  Validate cart ownership and fetch items
     const cartResult = await client.query(
       `SELECT * FROM carts WHERE user_id = $1 LIMIT 1`,
