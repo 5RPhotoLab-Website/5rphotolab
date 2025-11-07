@@ -125,7 +125,7 @@
 import { useEffect, useState } from "react";
 
 
-const API_BASE_URL = import.meta.env.API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const isSandbox = import.meta.env.VITE_SQUARE_ENV === "sandbox";
 const appId = isSandbox
   ? import.meta.env.VITE_SQUARE_SANDBOX_APP_ID
@@ -204,7 +204,7 @@ const CheckoutForm = () => {
       const nonce = result.token;
 
       // Send nonce to backend checkout route
-      const response = await fetch("/api/checkout", {
+      const response = await fetch(`${API_BASE_URL}/api/checkout`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // ensures cookies (for logged-in user)

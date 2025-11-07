@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import AccessibleSitePage from '../pages/AccessibleSitePage.jsx';
 import ItemDetailsPage from '../pages/ItemDetailsPage';
 import CheckoutForm from './CheckoutForm';
+import Login from './Login.jsx'
 
 const SideNav = () => {
     const [buttonClicked, setButtonClicked] = useState('');
@@ -44,7 +45,11 @@ const SideNav = () => {
     let element = useRoutes([
         {
             path: "/",
-            element: <HomePage/>
+            element: <HomePage />
+        },
+        {
+            path: "/login",
+            element: <Login />
         },
         {
             path: "/services",
@@ -62,12 +67,12 @@ const SideNav = () => {
             path: "/accessible-site",
             element: <AccessibleSitePage />
         },
+        // {
+        //     path: "/items/:id",
+        //     element: <ItemDetailsPage />
+        // },
         {
-            path: "/items/:id",
-            element: <ItemDetailsPage />
-        },
-        {
-            path:"/checkout",
+            path: "/checkout",
             element: <CheckoutForm />
         },
         {
@@ -155,7 +160,7 @@ const SideNav = () => {
                         </a>
                     </div>
                 </div>
-                <Link to="/accessible-site"><p style={{fontFamily:'Arial', fontSize:'12px', backgroundColor:'white'}}>Accessible Site</p></Link>
+                <Link to="/accessible-site"><p style={{ fontFamily: 'Arial', fontSize: '12px', backgroundColor: 'white' }}>Accessible Site</p></Link>
             </div>
 
             {element}

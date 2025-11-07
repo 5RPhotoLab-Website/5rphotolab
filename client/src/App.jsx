@@ -13,59 +13,59 @@ import CheckoutForm from './components/CheckoutForm';
 import ErrorPage from './pages/ErrorPage';
 import Login from './components/Login';
 
-const API_BASE_URL = import.meta.env.API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 function App() {
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      const response = await fetch(`${API_BASE_URL}/api/items`);
-      const data = await response.json();
-      setItems(data);
-    }
-    fetchItems();
-  }, []);
+  // useEffect(() => {
+  //   const fetchItems = async () => {
+  //     const response = await fetch(`${API_BASE_URL}/api/items`);
+  //     const data = await response.json();
+  //     setItems(data);
+  //   }
+  //   fetchItems();
+  // }, []);
 
-  let element = useRoutes([
-    {
-      path: "/",
-      element: <HomePage items={items} />
-    },
-    {
-      path: "/login",
-      element: <Login />
-    },
-    {
-      path: "/services",
-      element: <ServicesPage />
-    },
-    {
-      path: "/mail-in",
-      element: <MailInPage />
-    },
-    {
-      path: "/contact",
-      element: <ContactPage />
-    },
-    {
-      path: "/accessible-site",
-      element: <AccessibleSitePage />
-    },
-    {
-      path: "/items/:id",
-      element: <ItemDetailsPage items={items} />
-    },
-    {
-      path: "/checkout",
-      element: <CheckoutForm />
-    },
-    {
-      path: "*",
-      element: <ErrorPage />
-    }
-  ]);
+  // let element = useRoutes([
+  //   {
+  //     path: "/",
+  //     element: <HomePage items={items} />
+  //   },
+  //   {
+  //     path: "/login",
+  //     element: <Login />
+  //   },
+  //   {
+  //     path: "/services",
+  //     element: <ServicesPage />
+  //   },
+  //   {
+  //     path: "/mail-in",
+  //     element: <MailInPage />
+  //   },
+  //   {
+  //     path: "/contact",
+  //     element: <ContactPage />
+  //   },
+  //   {
+  //     path: "/accessible-site",
+  //     element: <AccessibleSitePage />
+  //   },
+  //   {
+  //     path: "/items/:id",
+  //     element: <ItemDetailsPage items={items} />
+  //   },
+  //   {
+  //     path: "/checkout",
+  //     element: <CheckoutForm />
+  //   },
+  //   {
+  //     path: "*",
+  //     element: <ErrorPage />
+  //   }
+  // ]);
 
   return (
     <div className="bg-mainBackground">
