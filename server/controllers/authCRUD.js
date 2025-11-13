@@ -18,8 +18,8 @@ const createUserSignUp = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: "lax",
-            secure: true, // set true when using HTTPS
+            sameSite: "none",
+            secure: process.env.SQUARE_ENV === "production", // set true when using HTTPS in production only
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
 
@@ -45,8 +45,8 @@ const createUserLogin = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: "lax",
-            secure: true, // true in production HTTPS
+            sameSite: "none",
+            secure: process.env.SQUARE_ENV === "production", // set true when using HTTPS in production only
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
@@ -59,7 +59,7 @@ const createUserLogin = async (req, res) => {
 const getUser = async (req, res) => {
     res.json({
         user: {
-            id: req.user.userId,
+            id: req.user.id,
             email: req.user.email,
         },
     });
@@ -67,7 +67,7 @@ const getUser = async (req, res) => {
 
 // optional: logout
 const logoutUser = async (req, res) => {
-    res.clearCookie("token");
+    res.clearCookie("token", { httpOnly: true, secure: process.env.SQUARE_ENV === "production", sameSite: "none" });
     res.json({ message: "Logged out" });
 };
 
