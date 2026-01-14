@@ -18,9 +18,9 @@ const createUserSignUp = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: "none",
+            sameSite: "lax",
             secure: process.env.SQUARE_ENV === "production", // set true when using HTTPS in production only
-            domain: ".5rphotolab.com",
+            // domain: ".5rphotolab.com",
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
 
@@ -46,9 +46,9 @@ const createUserLogin = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: "none",
+            sameSite: "lax",
             secure: process.env.SQUARE_ENV === "production", // set true when using HTTPS in production only
-            domain: ".5rphotolab.com",
+            // domain: ".5rphotolab.com",
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
