@@ -139,7 +139,7 @@ const HomePageMobile = () => {
                         <a href="tel:+16463194106">+1 (646) 319-4106</a>
                     </div>
 
-                    <Link to="/accessible-site"><p style={{ fontFamily: 'Arial', fontSize: '12px', backgroundColor: 'white' }}>Accessible Site</p></Link>
+                    <Link to="/accessible-site"><p style={{ fontFamily: 'Arial', fontSize: '12px', backgroundColor: 'white', marginBottom: '20px' }}>Accessible Site</p></Link>
 
                 </section>
                 <section className="feetMobile">
