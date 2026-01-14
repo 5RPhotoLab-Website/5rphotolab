@@ -336,7 +336,7 @@
 .rectContainerBodyMobile {
     align-self: center;
     border: var(--main-border);
-    height: 80vh;
+    /* height: 80vh; */
     margin-bottom: -1.25rem;
     margin-top: -1.25rem;
     width: 70vw;
@@ -349,11 +349,12 @@
 
 .addressMobile {
     text-align: center;
+    margin-top: 20px;
 }
 
 .hoursMobile,
 .phoneNumberMobile {
-    margin-top: 10vh;
+    margin-top: 90px;
 }
 
 .buzzInContainerMobile {
