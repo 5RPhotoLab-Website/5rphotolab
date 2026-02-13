@@ -9,6 +9,7 @@ import paymentsRouter from './routes/paymentsRoutes.js';
 import cartsRouter from './routes/cartRoutes.js';
 import checkoutRouter from './routes/checkoutRoutes.js';
 import cookieParser from "cookie-parser";
+import path from 'path';
 import { fileURLToPath } from "url";
 
 
