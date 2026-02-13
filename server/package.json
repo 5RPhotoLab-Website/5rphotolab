@@ -1,0 +1,24 @@
+{
+  "name": "5rphotolab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --require dotenv/config server.js",
+    "reset": "cd config && node --require dotenv/config reset.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.16.3",
+    "square": "^43.0.1"
+  }
+}
