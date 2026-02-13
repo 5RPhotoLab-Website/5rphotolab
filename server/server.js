@@ -9,6 +9,8 @@ import paymentsRouter from './routes/paymentsRoutes.js';
 import cartsRouter from './routes/cartRoutes.js';
 import checkoutRouter from './routes/checkoutRoutes.js';
 import cookieParser from "cookie-parser";
+import { fileURLToPath } from "url";
+
 
 const app = express();
 const port = process.env.PORT || 5050;
@@ -31,6 +33,11 @@ app.use('/api/orders', ordersRouter);
 app.use('/api/payments', paymentsRouter);
 app.use('/api/cart', cartsRouter);
 app.use('/api/checkout', checkoutRouter);
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use("/images", express.static(path.join(__dirname, "data/images")));
 
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
