@@ -1,146 +1,155 @@
 import { pool } from "../config/database.js";
-import { createOrderService } from '../services/orderService.js';
+import { squareClient, squareEnv } from "../config/square.js";
+import { randomUUID } from "crypto";
 
-
-const createOrder = async (req, res) => {
+// POST /orders/checkout
+const createCheckout = async (req, res) => {
     try {
-        const userId = req.user?.id;
+        const session_id = req.headers["x-session-id"];
+        if (!session_id) return res.status(400).json({ error: "Missing session" });
 
-        const { items, totalAmount, status } = req.body;
+        // const { email, shipping } = req.body;
+        const { shipping, notes } = req.body;
 
-        if (!items || !Array.isArray(items) || items.length === 0) {
-            return res.status(400).json({ error: "At least one item is required" });
+        // Pull cart
+        const cartResult = await pool.query(
+            `SELECT * FROM carts WHERE session_id = $1 LIMIT 1`,
+            [session_id]
+        );
+        if (cartResult.rows.length === 0 || cartResult.rows[0].cart_data.products.length === 0) {
+            return res.status(400).json({ error: "Cart is empty" });
         }
 
-        if (!totalAmount) {
-            return res.status(400).json({ error: "totalAmount is required" });
-        }
+        const cart = cartResult.rows[0];
+        const products = cart.cart_data.products;
 
-        // Start a transaction
-        await pool.query("BEGIN");
+        const lineItems = products.map((p) => ({
+            name: p.name,
+            quantity: String(p.quantity),
+            basePriceMoney: {
+                amount: BigInt(Math.round(p.unitPrice * 100)),
+                currency: "USD"
+            }
+        }));
 
-        const order = await createOrderService(userId, items, totalAmount);
-        if (status) {
-            await pool.query(`UPDATE orders SET status=$1 WHERE id=$2`, [
-                status,
-                order.id,
-            ]);
-        }
+        const totalAmount = products.reduce((sum, p) => sum + p.unitPrice * p.quantity, 0);
 
-        // Insert into orders table
-        //     const orderResult = await pool.query(
-        //         `INSERT INTO orders (user_id, total_amount, status)
-        //    VALUES ($1, $2, $3)
-        //    RETURNING *`,
-        //         [userId, totalAmount, status || 'PENDING']
-        //     );
-
-        //     const order = orderResult.rows[0];
-
-        // Insert each item into order_items
-        // for (const item of items) {
-        //     const { item_id, quantity, unit_price } = item;
-        //     if (!item_id || !quantity || !unit_price) {
-        //         await pool.query("ROLLBACK");
-        //         return res.status(400).json({ error: "Each item must include item_id, quantity, and unit_price" });
-        //     }
-
-        //     await pool.query(
-        //         `INSERT INTO order_items (order_id, item_id, quantity, unit_price)
-        //  VALUES ($1, $2, $3, $4)`,
-        //         [order.id, item_id, quantity, unit_price]
-        //     );
-        // }
-
-        // Commit transaction
-        await pool.query("COMMIT");
-
-        res.status(201).json({ order });
-    } catch (error) {
-        // Rollback transaction on error
-        await pool.query("ROLLBACK");
-        res.status(500).json({ error: error.message });
-    }
-};
-
-
-const getUserOrders = async (req, res) => {
-    try {
-        const userId = req.user.id;
-
-        // Get orders
-        const ordersResult = await pool.query(
-            "SELECT * FROM orders WHERE user_id = $1 ORDER BY id ASC",
-            [userId]
+        const orderResult = await pool.query(
+            `INSERT INTO orders 
+                (session_id, total_amount, payment_status,
+                 shipping_requested, shipping_address_line1, shipping_address_line2,
+                 shipping_city, shipping_state, shipping_zip, shipping_country, notes)
+             VALUES ($1,$2,'PENDING',$3,$4,$5,$6,$7,$8,$9,$10)
+             RETURNING *`,
+            [
+                session_id,
+                totalAmount,
+                shipping?.requested || false,
+                shipping?.address_line1 || null,
+                shipping?.address_line2 || null,
+                shipping?.city || null,
+                shipping?.state || null,
+                shipping?.zip || null,
+                shipping?.country || 'US',
+                notes || null
+                // email || null,
+            ]
         );
 
-        const orders = ordersResult.rows;
+        const order = orderResult.rows[0];
 
-        // Optionally, fetch order_items for each order
-        for (const order of orders) {
-            const itemsResult = await pool.query(
-                `SELECT oi.*, i.name, i.image
-                FROM order_items oi
-                JOIN items i ON oi.item_id = i.id
-                WHERE oi.order_id = $1`,
-                [order.id]
-            );
-            order.items = itemsResult.rows;
-        }
 
-        res.status(200).json(orders);
+        const response = await squareClient.checkout.paymentLinks.create({
+            idempotencyKey: randomUUID(),
+            order: {
+                locationId: squareEnv.locationId,
+                lineItems,
+            },
+            checkoutOptions: {
+                redirectUrl: `${process.env.CLIENT_URL}/order/confirmation?orderId=${order.id}`,
+                askForShippingAddress: false
+            },
+            // prePopulatedData: {
+            //     buyerEmail: email || undefined
+            // }
+        });
+        
+
+        await pool.query(
+            `UPDATE orders SET square_order_id = $1, updated_at = NOW() WHERE id = $2`,
+            [response.paymentLink.orderId, order.id]
+        );
+
+        res.status(201).json({ checkoutUrl: response.paymentLink.url, orderId: order.id });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: error.message });
     }
 };
 
-const getOrderItemsById = async (req, res) => {
+// GET /orders/:orderId
+const getOrderById = async (req, res) => {
     try {
-        const orderId = parseInt(req.params.orderId);
-        const userId = req.user.id;
+        const { orderId } = req.params;
+        const session_id = req.headers["x-session-id"];
 
         const result = await pool.query(
-            `SELECT oi.*, i.name, i.description
-            FROM order_items oi
-            JOIN items i ON oi.item_id = i.id
-            WHERE oi.order_id = $1`,
-            [orderId]
+            `SELECT * FROM orders WHERE id = $1 AND session_id = $2`,
+            [orderId, session_id]
         );
 
         if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Order Details not found' });
+            return res.status(404).json({ error: "Order not found" });
         }
 
-        res.status(200).json(result.rows);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-}
-
-const deleteOrder = async (req, res) => {
-    try {
-        const orderId = parseInt(req.params.orderId);
-        const userId = req.user.id;
-
-        // First, check if order exists and belongs to the user
-        const checkResult = await pool.query(
-            `SELECT * FROM orders WHERE id = $1 AND user_id = $2`,
-            [orderId, userId]
-        );
-
-        if (checkResult.rows.length === 0) {
-            return res.status(404).json({ error: "Order not found or access denied" });
-        }
-
-        // Delete order (order_items will be deleted automatically if ON DELETE CASCADE is set)
-        await pool.query(`DELETE FROM orders WHERE id = $1`, [orderId]);
-
-        res.status(200).json({ message: "Order deleted successfully" });
+        res.status(200).json(result.rows[0]);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
+// GET /orders/:orderId/items
+const getOrderItems = async (req, res) => {
+    try {
+        const { orderId } = req.params;
+        const session_id = req.headers["x-session-id"];
 
+        // First get your DB order to verify session and get square_order_id
+        const result = await pool.query(
+            `SELECT * FROM orders WHERE id = $1 AND session_id = $2`,
+            [orderId, session_id]
+        );
 
-export default { getUserOrders, createOrder, getOrderItemsById, deleteOrder };
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: "Order not found" });
+        }
+
+        const order = result.rows[0];
+        if (!order.square_order_id) {
+            return res.status(404).json({ error: "No Square order found" });
+        }
+
+        // Fetch from Square Orders API
+        const response = await squareClient.orders.get({ orderId: order.square_order_id });
+
+        const lineItems = response.order.lineItems || [];
+
+        const items = lineItems.map(item => ({
+            name: item.name,
+            quantity: item.quantity,
+            unitPrice: item.basePriceMoney ? (Number(item.basePriceMoney.amount) / 100).toFixed(2) : "0.00",
+            totalPrice: item.totalMoney ? (Number(item.totalMoney.amount) / 100).toFixed(2) : "0.00"
+        }));
+
+        const squareTotal = response.order.totalMoney
+            ? (Number(response.order.totalMoney.amount) / 100).toFixed(2)
+            : null;
+
+        res.status(200).json({ items, squareTotal });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+};
+
+export default { createCheckout, getOrderById, getOrderItems };

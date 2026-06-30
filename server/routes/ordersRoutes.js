@@ -1,15 +1,11 @@
-import express from 'express'
+// routes/ordersRoutes.js
+import express from 'express';
 import OrdersController from '../controllers/ordersCRUD.js';
-import { requireAuth } from '../middleware/authMiddleware.js';
 
 const ordersRouter = express.Router();
 
-ordersRouter.use(requireAuth); // all routes require authentication
-
-ordersRouter.post('/create', OrdersController.createOrder);
-ordersRouter.get('/', OrdersController.getUserOrders);
-ordersRouter.get('/:orderId', OrdersController.getOrderItemsById);
-ordersRouter.delete('/:orderId', OrdersController.deleteOrder);
-
+ordersRouter.post('/checkout', OrdersController.createCheckout);
+ordersRouter.get('/:orderId', OrdersController.getOrderById);
+ordersRouter.get('/:orderId/items', OrdersController.getOrderItems);
 
 export default ordersRouter;

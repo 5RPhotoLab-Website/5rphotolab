@@ -1,18 +1,42 @@
+@font-face {
+  font-family: AtkinsonBold;
+  src: url(./assets/fonts/AtkinsonHyperlegible-Bold.ttf);
+}
 
+@font-face {
+  font-family: AtkinsonRegular;
+  src: url(./assets/fonts/AtkinsonHyperlegible-Regular.ttf);
+}
 
+@font-face {
+  font-family: Bubblicious;
+  src: url(./assets/fonts/Bubblicious.ttf);
+}
 
-:root{
-  background-color: #7FFF00;
+@import "tailwindcss";
+
+@theme {
+  --font-atkinson-bold: AtkinsonBold, "sans-serif";
+  --font-atkinson-regular: AtkinsonREgular, "sans-serif";
+  --font-bubblicious: Bubblicious, "sans-serif";
+  --color-orange: #FF5C2C;
+  --color-blue: #1493FF;
+  --color-yellow: #FFD101;
+  --color-purple: #A95AF1;
+  --color-green: #29DF63;
+  --color-green-footer: #7FFF00;
+  --color-red: #EF3D3A;
+  --color-pink: #FF1493;
+  --color-dark-gray: #211F22;
 }
 
 
-/* @font-face {
-  font-family: 'Bubblicious';
-  src: url('/src/assets/fonts/Bubblicious.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-} */
+a[href^="tel"] {
+  color: inherit !important;
+  text-decoration: none;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+:root {
+  background-color: #F5F5F5;
+}
